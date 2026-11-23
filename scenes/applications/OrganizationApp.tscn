@@ -1,0 +1,193 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/applications/organization_app.gd" id="1"]
+[ext_resource type="PackedScene" path="res://scenes/ui/StatCard.tscn" id="2"]
+
+[node name="OrganizationApp" type="VBoxContainer"]
+theme_override_constants/separation = 14
+script = ExtResource("1")
+
+[node name="FoundingView" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Center" type="CenterContainer" parent="FoundingView"]
+layout_mode = 2
+
+[node name="VBox" type="VBoxContainer" parent="FoundingView/Center"]
+custom_minimum_size = Vector2(520, 0)
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Title" type="Label" parent="FoundingView/Center/VBox"]
+layout_mode = 2
+theme_type_variation = &"HeaderLabel"
+text = "FOUND A COMPANY"
+
+[node name="Intro" type="Label" parent="FoundingView/Center/VBox"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+text = "A registered company can rent offices and hire staff. Staff earn money every business day, or support you on your own contracts."
+autowrap_mode = 3
+
+[node name="CompanyNameEdit" type="LineEdit" parent="FoundingView/Center/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+placeholder_text = "Company name"
+
+[node name="FoundingFactsLabel" type="Label" parent="FoundingView/Center/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"DimLabel"
+text = "Registration fee"
+
+[node name="FoundingBlockerLabel" type="Label" parent="FoundingView/Center/VBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(500, 52)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.271, 0.376, 1)
+autowrap_mode = 3
+
+[node name="FoundButton" type="Button" parent="FoundingView/Center/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+text = "Found Company"
+
+[node name="CompanyView" type="VBoxContainer" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 14
+
+[node name="Header" type="HBoxContainer" parent="CompanyView"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="CompanyNameLabel" type="Label" parent="CompanyView/Header"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"HeaderLabel"
+text = "Company"
+clip_text = true
+
+[node name="CompanyLevelLabel" type="Label" parent="CompanyView/Header"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.659, 0.333, 0.969, 1)
+text = "COMPANY LEVEL 1"
+
+[node name="XpRow" type="HBoxContainer" parent="CompanyView"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="CompanyXpBar" type="ProgressBar" parent="CompanyView/XpRow"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 18)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+show_percentage = false
+
+[node name="CompanyXpLabel" type="Label" parent="CompanyView/XpRow"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+theme_type_variation = &"DimLabel"
+text = "0 / 0 XP"
+horizontal_alignment = 2
+
+[node name="Cards" type="HBoxContainer" parent="CompanyView"]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="CompanyReputationCard" parent="CompanyView/Cards" instance=ExtResource("2")]
+unique_name_in_owner = true
+layout_mode = 2
+title = "COMPANY REPUTATION"
+
+[node name="CompanyStaffCard" parent="CompanyView/Cards" instance=ExtResource("2")]
+unique_name_in_owner = true
+layout_mode = 2
+title = "STAFF / DESKS"
+
+[node name="CompanyCostsCard" parent="CompanyView/Cards" instance=ExtResource("2")]
+unique_name_in_owner = true
+layout_mode = 2
+title = "COSTS PER DAY"
+
+[node name="CompanyDayCard" parent="CompanyView/Cards" instance=ExtResource("2")]
+unique_name_in_owner = true
+layout_mode = 2
+title = "BUSINESS DAY"
+
+[node name="Panels" type="HBoxContainer" parent="CompanyView"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 14
+
+[node name="OfficePanel" type="PanelContainer" parent="CompanyView/Panels"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBox" type="VBoxContainer" parent="CompanyView/Panels/OfficePanel"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Title" type="Label" parent="CompanyView/Panels/OfficePanel/VBox"]
+layout_mode = 2
+theme_type_variation = &"DimLabel"
+text = "OFFICE"
+
+[node name="OfficeFacts" type="RichTextLabel" parent="CompanyView/Panels/OfficePanel/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 0
+
+[node name="ExpansionBlockerLabel" type="Label" parent="CompanyView/Panels/OfficePanel/VBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.271, 0.376, 1)
+autowrap_mode = 3
+
+[node name="ExpandButton" type="Button" parent="CompanyView/Panels/OfficePanel/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+text = "Expand"
+
+[node name="ReportPanel" type="PanelContainer" parent="CompanyView/Panels"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBox" type="VBoxContainer" parent="CompanyView/Panels/ReportPanel"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="DayTitle" type="Label" parent="CompanyView/Panels/ReportPanel/VBox"]
+layout_mode = 2
+theme_type_variation = &"DimLabel"
+text = "TIME UNTIL THE DAY ENDS"
+
+[node name="DayProgressBar" type="ProgressBar" parent="CompanyView/Panels/ReportPanel/VBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 14)
+layout_mode = 2
+show_percentage = false
+
+[node name="ReportTitle" type="Label" parent="CompanyView/Panels/ReportPanel/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"DimLabel"
+text = "DAILY REPORT"
+
+[node name="ReportTable" type="RichTextLabel" parent="CompanyView/Panels/ReportPanel/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 0

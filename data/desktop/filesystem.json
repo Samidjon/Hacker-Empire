@@ -1,0 +1,57 @@
+{
+	"children": [
+		{
+			"name": "home",
+			"children": [
+				{
+					"name": "user",
+					"children": [
+						{
+							"name": "welcome.txt",
+							"content": "EMPIRE OS - first boot\n\nThis machine is old, slow and yours.\n\nEverything you do from here happens inside closed training simulations.\nNothing on this system can reach a real network.\n\nOpen the Terminal and type 'help' to see what it understands.\nCheck Mail for messages. Check Finance to see where your money goes."
+						},
+						{
+							"name": "notes",
+							"children": [
+								{
+									"name": "todo.txt",
+									"content": "TODO\n\n- Find paying work on the contract board\n- Replace this fossil of a CPU\n- Learn something that is not on the first page of a tutorial\n- Stop eating instant noodles over the keyboard"
+								},
+								{
+									"name": "ideas.txt",
+									"content": "IDEAS\n\nA one-person shop cannot take every job.\nPick a lane first: recovery, audits, or malware analysis.\n\nLater: an office. People. A product with my name on it.\nLater still: an empire."
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "docs",
+			"children": [
+				{
+					"name": "terminal_guide.txt",
+					"content": "TERMINAL GUIDE\n\nhelp            list every command\nstatus          your profile at a glance\nls, cd, cat     look around the file system\napps            list installed applications\nopen <app>      launch an application, e.g. 'open mail'\nclear           wipe the screen\n\nPaths may be absolute (/docs) or relative (notes/todo.txt).\n'..' goes up one folder. '~' is your home folder."
+				},
+				{
+					"name": "rules_of_engagement.txt",
+					"content": "RULES OF ENGAGEMENT\n\n1. Work only inside the simulation a client provides.\n2. Written permission first. Always.\n3. Leave a system in better shape than you found it.\n4. Report what you find. All of it.\n\nReputation is the only currency that compounds."
+				}
+			]
+		},
+		{
+			"name": "sys",
+			"children": [
+				{
+					"name": "version.txt",
+					"content": "EMPIRE OS 0.3\nKernel: neon-lts\nBuild: desktop shell preview"
+				},
+				{
+					"name": "hardware.txt",
+					"content": "DETECTED HARDWARE\n\nCPU      Pentaline II (salvaged)\nRAM      4 GB, one stick loose\nStorage  120 GB, makes a noise\nNetwork  BlockHaus residential uplink\n\nBuy parts in Marketplace. See what is installed in Hardware."
+				}
+			]
+		}
+	]
+}

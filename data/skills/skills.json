@@ -1,0 +1,27 @@
+{
+	"skills": [
+		{"id": "prog_clean_code", "branch": "programming", "name": "Clean Code", "row": 0, "max_level": 3, "cost": 1, "required_level": 1, "requires": {}, "effects": {"contract_reward:software_debugging": 8}, "description": "You read other people's code the way other people read menus."},
+		{"id": "prog_automation", "branch": "programming", "name": "Automation", "row": 1, "max_level": 3, "cost": 1, "required_level": 3, "requires": {"prog_clean_code": 1}, "effects": {"contract_time": 6}, "description": "Scripts do the dull half of every job, which leaves you more time for the rest."},
+		{"id": "prog_tooling", "branch": "programming", "name": "Custom Tooling", "row": 2, "max_level": 3, "cost": 2, "required_level": 6, "requires": {"prog_automation": 2}, "effects": {"contract_xp": 5}, "description": "You build your own tools, and building them teaches you more than using them."},
+
+		{"id": "net_packet_sense", "branch": "networking", "name": "Packet Sense", "row": 0, "max_level": 3, "cost": 1, "required_level": 1, "requires": {}, "effects": {"contract_reward:network_analysis": 8}, "description": "A traffic capture reads like a conversation to you."},
+		{"id": "net_fast_routes", "branch": "networking", "name": "Fast Routes", "row": 1, "max_level": 3, "cost": 1, "required_level": 2, "requires": {}, "effects": {"refresh_cooldown": 15}, "description": "You know which boards post work first. New offers reach you sooner."},
+		{"id": "net_wide_net", "branch": "networking", "name": "Wide Net", "row": 2, "max_level": 2, "cost": 2, "required_level": 6, "requires": {"net_fast_routes": 2}, "effects": {"board_size": 1}, "description": "More contacts, more clients. The contract board shows more offers."},
+
+		{"id": "sec_auditor", "branch": "cybersecurity", "name": "Auditor", "row": 0, "max_level": 3, "cost": 1, "required_level": 1, "requires": {}, "effects": {"contract_reward:security_audit": 8}, "description": "You find the open door before anyone walks through it."},
+		{"id": "sec_incident_response", "branch": "cybersecurity", "name": "Incident Response", "row": 1, "max_level": 3, "cost": 1, "required_level": 3, "requires": {"sec_auditor": 1}, "effects": {"contract_reward:incident_investigation": 8}, "description": "When something has already gone wrong, clients call you first."},
+		{"id": "sec_second_look", "branch": "cybersecurity", "name": "Second Look", "row": 2, "max_level": 2, "cost": 2, "required_level": 6, "requires": {"sec_auditor": 2}, "effects": {"extra_mistakes": 1}, "description": "You double-check by habit. Clients forgive one more slip."},
+
+		{"id": "cry_frequency", "branch": "cryptography", "name": "Frequency Analysis", "row": 0, "max_level": 3, "cost": 1, "required_level": 1, "requires": {}, "effects": {"contract_reward:cryptography": 8}, "description": "Letters have habits. You know all of them."},
+		{"id": "cry_steady_hands", "branch": "cryptography", "name": "Steady Hands", "row": 1, "max_level": 3, "cost": 1, "required_level": 3, "requires": {"cry_frequency": 1}, "effects": {"flawless_bonus": 5}, "description": "Careful work is worth more. The bonus for a job with no mistakes grows."},
+		{"id": "cry_clean_tracks", "branch": "cryptography", "name": "Clean Tracks", "row": 2, "max_level": 3, "cost": 2, "required_level": 6, "requires": {"cry_steady_hands": 1}, "effects": {"heat_reduction": 20}, "description": "Anonymous clients stay anonymous, and so do you. Underground work raises less heat."},
+
+		{"id": "re_disassembly", "branch": "reverse_engineering", "name": "Disassembly", "row": 0, "max_level": 3, "cost": 1, "required_level": 2, "requires": {}, "effects": {"contract_reward:malware_investigation": 8}, "description": "You take programs apart to see what they were told to do."},
+		{"id": "re_data_carving", "branch": "reverse_engineering", "name": "Data Carving", "row": 1, "max_level": 3, "cost": 1, "required_level": 3, "requires": {"re_disassembly": 1}, "effects": {"contract_reward:file_recovery": 8}, "description": "A dead disk is just a puzzle with the picture missing."},
+		{"id": "re_pattern_memory", "branch": "reverse_engineering", "name": "Pattern Memory", "row": 2, "max_level": 3, "cost": 2, "required_level": 6, "requires": {"re_disassembly": 2}, "effects": {"contract_time": 6}, "description": "You have seen this trick before. Familiar work goes faster."},
+
+		{"id": "ai_ml_basics", "branch": "ai_research", "name": "Machine Learning Basics", "row": 0, "max_level": 3, "cost": 1, "required_level": 4, "requires": {}, "effects": {"research_power": 10}, "description": "You can train a model without setting anything on fire. Adds research power, which the Research lab will use."},
+		{"id": "ai_smart_assistant", "branch": "ai_research", "name": "Smart Assistant", "row": 1, "max_level": 3, "cost": 2, "required_level": 6, "requires": {"ai_ml_basics": 1}, "effects": {"contract_xp": 5}, "description": "A small model that summarises what you just did, so you remember it."},
+		{"id": "ai_predictive_models", "branch": "ai_research", "name": "Predictive Models", "row": 2, "max_level": 3, "cost": 2, "required_level": 10, "requires": {"ai_smart_assistant": 2}, "effects": {"contract_reward": 3}, "description": "You price jobs better than your clients do. Every contract pays a little more."}
+	]
+}

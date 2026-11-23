@@ -1,0 +1,10 @@
+{
+	"offices": [
+		{"id": "home_office", "name": "Home Office", "capacity": 1, "rent": 0, "cost": 0, "required_company_level": 1, "description": "Your apartment, with a company name taped to the door. Room for one colleague at the kitchen table."},
+		{"id": "shared_desk", "name": "Shared Desks", "capacity": 2, "rent": 60, "cost": 1000, "required_company_level": 1, "description": "Two desks in a co-working space above a noodle shop. The coffee is free and tastes like it."},
+		{"id": "small_office", "name": "Small Office", "capacity": 4, "rent": 150, "cost": 4000, "required_company_level": 2, "description": "A real door with a real lock, and a window that almost opens."},
+		{"id": "open_floor", "name": "Open-Plan Floor", "capacity": 8, "rent": 400, "cost": 12000, "required_company_level": 4, "description": "Half a floor in a converted warehouse. People start calling it 'the office' without irony."},
+		{"id": "tower_suite", "name": "Tower Suite", "capacity": 14, "rent": 1000, "cost": 40000, "required_company_level": 6, "description": "The twenty-third floor, with a reception desk and a view of everyone you used to work for."},
+		{"id": "campus", "name": "Private Campus", "capacity": 24, "rent": 2500, "cost": 120000, "required_company_level": 8, "description": "Your own building with your own name on it in neon."}
+	]
+}

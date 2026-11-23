@@ -1,0 +1,76 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/applications/skills_app.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/skills/skill_tree_view.gd" id="2"]
+
+[node name="SkillsApp" type="HBoxContainer"]
+theme_override_constants/separation = 14
+script = ExtResource("1")
+
+[node name="TreePanel" type="PanelContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SkillTree" type="Control" parent="TreePanel"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(780, 420)
+layout_mode = 2
+script = ExtResource("2")
+
+[node name="Details" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(320, 0)
+layout_mode = 2
+
+[node name="VBox" type="VBoxContainer" parent="Details"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="SkillPointsLabel" type="Label" parent="Details/VBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 0.612, 1)
+text = "Skill points: 0"
+autowrap_mode = 3
+
+[node name="SkillNameLabel" type="Label" parent="Details/VBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_type_variation = &"HeaderLabel"
+text = "No skill selected"
+autowrap_mode = 3
+
+[node name="SkillMetaLabel" type="Label" parent="Details/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"DimLabel"
+
+[node name="SkillDescriptionLabel" type="Label" parent="Details/VBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+autowrap_mode = 3
+
+[node name="SkillEffectsLabel" type="Label" parent="Details/VBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.898, 1, 1)
+autowrap_mode = 3
+
+[node name="Spacer" type="Control" parent="Details/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="SkillBlockerLabel" type="Label" parent="Details/VBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.271, 0.376, 1)
+autowrap_mode = 3
+
+[node name="UpgradeButton" type="Button" parent="Details/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Upgrade"

@@ -1,0 +1,75 @@
+{
+	"chapters": [
+		{
+			"id": "bedroom_operator", "title": "Bedroom Operator",
+			"summary": "One room, one old computer, no clients. Prove you can finish a job.",
+			"reward_money": 200, "reward_xp": 30,
+			"objectives": [
+				{"text": "Complete a contract", "type": "contracts_completed", "target": 1},
+				{"text": "Reach level 2", "type": "player_level", "target": 2}
+			]
+		},
+		{
+			"id": "tools_of_the_trade", "title": "Tools of the Trade",
+			"summary": "A freelancer is only as good as their kit and what they know.",
+			"reward_money": 400, "reward_xp": 60,
+			"objectives": [
+				{"text": "Buy a hardware part", "type": "hardware_bought", "target": 1},
+				{"text": "Spend a skill point", "type": "skill_points_spent", "target": 1},
+				{"text": "Complete 3 contracts", "type": "contracts_completed", "target": 3}
+			]
+		},
+		{
+			"id": "name_on_the_door", "title": "A Name on the Door",
+			"summary": "There is more work than one person can take. Time to make it official.",
+			"reward_money": 600, "reward_xp": 100,
+			"objectives": [
+				{"text": "Reach level 3", "type": "player_level", "target": 3},
+				{"text": "Found a company", "type": "company_founded", "target": 1},
+				{"text": "Finish a research project", "type": "research_completed", "target": 1}
+			]
+		},
+		{
+			"id": "not_alone", "title": "Not Alone Any More",
+			"summary": "A company of one is just a freelancer with paperwork. Find people, and somewhere to put them.",
+			"reward_money": 1000, "reward_xp": 160,
+			"objectives": [
+				{"text": "Move out of the home office", "type": "office_tier", "target": 1},
+				{"text": "Employ 2 people", "type": "employees", "target": 2}
+			]
+		},
+		{
+			"id": "own_your_methods", "title": "Own Your Methods",
+			"summary": "Clients pay for your time. Customers pay for something you built once.",
+			"reward_money": 2500, "reward_xp": 300,
+			"objectives": [
+				{"text": "Finish 3 research projects", "type": "research_completed", "target": 3},
+				{"text": "Release a software product", "type": "products_released", "target": 1},
+				{"text": "Reach company level 2", "type": "company_level", "target": 2}
+			]
+		},
+		{
+			"id": "scale", "title": "Scale",
+			"summary": "The noodle shop downstairs has started calling you 'the tech people'.",
+			"reward_money": 8000, "reward_xp": 600,
+			"objectives": [
+				{"text": "Reach company level 4", "type": "company_level", "target": 4},
+				{"text": "Employ 5 people", "type": "employees", "target": 5},
+				{"text": "Have 2 products on the market", "type": "products_released", "target": 2},
+				{"text": "Reach level 10", "type": "player_level", "target": 10}
+			]
+		},
+		{
+			"id": "hacker_empire", "title": "Hacker Empire",
+			"summary": "From one room to a name people say before they say 'security'. Finish it.",
+			"reward_money": 50000, "reward_xp": 2000,
+			"objectives": [
+				{"text": "Reach company level 8", "type": "company_level", "target": 8},
+				{"text": "Move into the Tower Suite or larger", "type": "office_tier", "target": 4},
+				{"text": "Employ 10 people", "type": "employees", "target": 10},
+				{"text": "Have 4 products on the market", "type": "products_released", "target": 4},
+				{"text": "Reach level 20", "type": "player_level", "target": 20}
+			]
+		}
+	]
+}

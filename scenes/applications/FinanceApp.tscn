@@ -1,0 +1,92 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/applications/finance_app.gd" id="1"]
+[ext_resource type="PackedScene" path="res://scenes/ui/StatCard.tscn" id="2"]
+
+[node name="FinanceApp" type="VBoxContainer"]
+theme_override_constants/separation = 14
+script = ExtResource("1")
+
+[node name="Cards" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="FinanceBalanceCard" parent="Cards" instance=ExtResource("2")]
+unique_name_in_owner = true
+layout_mode = 2
+title = "BALANCE"
+
+[node name="FinanceIncomeCard" parent="Cards" instance=ExtResource("2")]
+unique_name_in_owner = true
+layout_mode = 2
+title = "LIFETIME INCOME"
+
+[node name="FinanceExpenseCard" parent="Cards" instance=ExtResource("2")]
+unique_name_in_owner = true
+layout_mode = 2
+title = "LIFETIME EXPENSES"
+
+[node name="FinanceNetCard" parent="Cards" instance=ExtResource("2")]
+unique_name_in_owner = true
+layout_mode = 2
+title = "NET"
+
+[node name="Breakdown" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(0, 170)
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="IncomePanel" type="PanelContainer" parent="Breakdown"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBox" type="VBoxContainer" parent="Breakdown/IncomePanel"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="Breakdown/IncomePanel/VBox"]
+layout_mode = 2
+theme_type_variation = &"DimLabel"
+text = "INCOME BY SOURCE"
+
+[node name="IncomeTable" type="RichTextLabel" parent="Breakdown/IncomePanel/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 0
+
+[node name="ExpensePanel" type="PanelContainer" parent="Breakdown"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBox" type="VBoxContainer" parent="Breakdown/ExpensePanel"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="Breakdown/ExpensePanel/VBox"]
+layout_mode = 2
+theme_type_variation = &"DimLabel"
+text = "EXPENSES BY CATEGORY"
+
+[node name="ExpenseTable" type="RichTextLabel" parent="Breakdown/ExpensePanel/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 0
+
+[node name="HistoryPanel" type="PanelContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBox" type="VBoxContainer" parent="HistoryPanel"]
+layout_mode = 2
+
+[node name="HistoryTitle" type="Label" parent="HistoryPanel/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"DimLabel"
+text = "TRANSACTION HISTORY"
+
+[node name="HistoryTable" type="RichTextLabel" parent="HistoryPanel/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 0

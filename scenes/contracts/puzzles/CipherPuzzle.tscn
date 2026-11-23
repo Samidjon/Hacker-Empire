@@ -1,0 +1,68 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/contracts/puzzles/cipher_puzzle.gd" id="1"]
+
+[node name="CipherPuzzle" type="VBoxContainer"]
+size_flags_horizontal = 3
+theme_override_constants/separation = 12
+script = ExtResource("1")
+
+[node name="CipherTitle" type="Label" parent="."]
+layout_mode = 2
+theme_type_variation = &"DimLabel"
+text = "ENCRYPTED TEXT"
+
+[node name="CipherText" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.69, 0.125, 1)
+theme_override_font_sizes/font_size = 22
+text = "..."
+autowrap_mode = 3
+
+[node name="DecodedTitle" type="Label" parent="."]
+layout_mode = 2
+theme_type_variation = &"DimLabel"
+text = "DECODED WITH THE CURRENT SHIFT"
+
+[node name="DecodedText" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 0.612, 1)
+theme_override_font_sizes/font_size = 22
+text = "..."
+autowrap_mode = 3
+
+[node name="Controls" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="ShiftDownButton" type="Button" parent="Controls"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(56, 0)
+layout_mode = 2
+tooltip_text = "Previous shift"
+text = "<"
+
+[node name="ShiftLabel" type="Label" parent="Controls"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(110, 0)
+layout_mode = 2
+text = "Shift 0"
+horizontal_alignment = 1
+
+[node name="ShiftUpButton" type="Button" parent="Controls"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(56, 0)
+layout_mode = 2
+tooltip_text = "Next shift"
+text = ">"
+
+[node name="Spacer" type="Control" parent="Controls"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CipherSubmitButton" type="Button" parent="Controls"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Submit Decryption"

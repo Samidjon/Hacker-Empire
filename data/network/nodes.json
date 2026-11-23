@@ -1,0 +1,76 @@
+{
+	"nodes": [
+		{
+			"id": "home_rig",
+			"name": "Your Rig",
+			"type": "home",
+			"description": "The machine you are sitting at. Old, loud and entirely yours.",
+			"position": [0.12, 0.55],
+			"required_level": 1,
+			"links": ["isp_gateway"]
+		},
+		{
+			"id": "isp_gateway",
+			"name": "BlockHaus Uplink",
+			"type": "gateway",
+			"description": "Residential uplink for the whole apartment block. Everything you send passes through here.",
+			"position": [0.3, 0.38],
+			"required_level": 1,
+			"links": ["darknode_bbs", "silicon_shop", "nimbus_sandbox"]
+		},
+		{
+			"id": "darknode_bbs",
+			"name": "DarkNode BBS",
+			"type": "community",
+			"description": "A bulletin board for simulation freelancers. Sysop runs it; contracts will be posted here.",
+			"position": [0.46, 0.16],
+			"required_level": 1,
+			"links": ["helix_range"]
+		},
+		{
+			"id": "silicon_shop",
+			"name": "Secondhand Silicon",
+			"type": "shop",
+			"description": "Mara's parts shop. Refurbished hardware at prices a beginner can almost afford.",
+			"position": [0.44, 0.74],
+			"required_level": 2,
+			"links": []
+		},
+		{
+			"id": "nimbus_sandbox",
+			"name": "Nimbus Sandbox",
+			"type": "training",
+			"description": "Rentable cloud sandboxes where clients stage broken systems for you to repair.",
+			"position": [0.58, 0.46],
+			"required_level": 4,
+			"links": ["helix_range", "orbital_lab"]
+		},
+		{
+			"id": "helix_range",
+			"name": "Helix Training Range",
+			"type": "training",
+			"description": "A financial firm's isolated practice network, built for paid security audits.",
+			"position": [0.72, 0.22],
+			"required_level": 8,
+			"links": ["aegis_citadel"]
+		},
+		{
+			"id": "orbital_lab",
+			"name": "Orbital Dynamics Lab",
+			"type": "research",
+			"description": "A research campus that commissions reverse-engineering work on its own prototypes.",
+			"position": [0.76, 0.7],
+			"required_level": 15,
+			"links": ["aegis_citadel"]
+		},
+		{
+			"id": "aegis_citadel",
+			"name": "Aegis Citadel",
+			"type": "enterprise",
+			"description": "The largest sanctioned test environment on the grid. Invitation only.",
+			"position": [0.9, 0.44],
+			"required_level": 30,
+			"links": []
+		}
+	]
+}

@@ -1,0 +1,85 @@
+{
+	"events": [
+		{
+			"id": "new_client", "title": "New Client Opportunity", "weight": 3,
+			"conditions": {"min_level": 2},
+			"description": "A bakery chain's payment terminals went down an hour before the morning rush. They found your name on DarkNode and want someone right now.",
+			"choices": [
+				{"label": "Take the rush job", "description": "A long night, well paid.", "effects": [{"type": "money", "amount": 350, "category": "contract"}, {"type": "xp", "amount": 30}, {"type": "reputation", "track": "white", "amount": 1}]},
+				{"label": "Refer them to someone else", "description": "You stay rested, and the board remembers the favour.", "effects": [{"type": "reputation", "track": "white", "amount": 2}]}
+			]
+		},
+		{
+			"id": "hardware_malfunction", "title": "Hardware Malfunction", "weight": 3,
+			"conditions": {},
+			"description": "Your machine reboots twice in ten minutes. Something inside smells warm.",
+			"choices": [
+				{"label": "Replace the failing part", "description": "A trip to Mara's shop.", "effects": [{"type": "money", "amount": -200, "category": "hardware"}]},
+				{"label": "Tape it up and carry on", "description": "It will hold. You will miss a deadline finding out.", "effects": [{"type": "reputation", "track": "white", "amount": -2}, {"type": "xp", "amount": 15}]}
+			]
+		},
+		{
+			"id": "grey_offer", "title": "An Anonymous Offer", "weight": 2,
+			"conditions": {"min_level": 3},
+			"description": "A message with no sender offers good money to 'look over' a training range without telling its owner you were asked.",
+			"choices": [
+				{"label": "Take the money", "description": "Nobody asks, nobody tells.", "effects": [{"type": "money", "amount": 600, "category": "contract"}, {"type": "reputation", "track": "underground", "amount": 3}, {"type": "heat", "amount": 8}]},
+				{"label": "Tell the range owner", "description": "No pay. They will remember who warned them.", "effects": [{"type": "reputation", "track": "white", "amount": 3}, {"type": "heat", "amount": -3}]}
+			]
+		},
+		{
+			"id": "power_cut", "title": "Power Cut", "weight": 2,
+			"conditions": {},
+			"description": "The whole block goes dark. Your screens die mid-sentence.",
+			"choices": [
+				{"label": "Buy a battery backup", "description": "It keeps everything running until the power returns.", "effects": [{"type": "money", "amount": -250, "category": "electricity"}]},
+				{"label": "Wait in the dark", "description": "You lose the afternoon, and whatever was not saved.", "effects": [{"type": "research_progress", "amount": -40}, {"type": "morale", "amount": -6}]}
+			]
+		},
+		{
+			"id": "employee_resignation", "title": "Resignation Letter", "weight": 3,
+			"conditions": {"min_employees": 1},
+			"description": "{employee} asks for a word. Another firm has offered more money, and they wanted you to hear it from them first.",
+			"choices": [
+				{"label": "Make a counter-offer", "description": "A one-off bonus to stay.", "effects": [{"type": "money", "amount": -300, "category": "salary"}, {"type": "employee_morale", "amount": 20}]},
+				{"label": "Wish them well", "description": "{employee} leaves the company.", "effects": [{"type": "employee_leaves"}, {"type": "morale", "amount": -4}]}
+			]
+		},
+		{
+			"id": "competitor_recruitment", "title": "Competitor Recruitment", "weight": 2,
+			"conditions": {"min_employees": 1},
+			"description": "A rival firm has been messaging your whole team with job adverts. People are talking about it at lunch.",
+			"choices": [
+				{"label": "Take everyone out to dinner", "description": "Remind them why they work here.", "effects": [{"type": "money", "amount": -150, "category": "salary"}, {"type": "morale", "amount": 10}]},
+				{"label": "Ignore it", "description": "They are adults.", "effects": [{"type": "morale", "amount": -12}]}
+			]
+		},
+		{
+			"id": "server_failure", "title": "Server Failure", "weight": 3,
+			"conditions": {"requires_infrastructure": true},
+			"description": "An alarm at three in the morning: a disk array has dropped out and services are running without a spare.",
+			"choices": [
+				{"label": "Pay for emergency replacement", "description": "A courier, a new array, no downtime.", "effects": [{"type": "money", "amount": -400, "category": "server_maintenance"}, {"type": "company_reputation", "amount": 1}]},
+				{"label": "Run without a spare until Monday", "description": "Customers notice the slowdown.", "effects": [{"type": "company_reputation", "amount": -4}, {"type": "morale", "amount": -5}]}
+			]
+		},
+		{
+			"id": "research_breakthrough", "title": "Research Breakthrough", "weight": 3,
+			"conditions": {"requires_active_research": true},
+			"description": "A result nobody expected: one experiment makes three others unnecessary.",
+			"choices": [
+				{"label": "Publish it", "description": "Share the method. Slower for you, good for your name.", "effects": [{"type": "research_progress", "amount": 40}, {"type": "reputation", "track": "white", "amount": 3}]},
+				{"label": "Keep it in-house", "description": "Put everything into finishing first.", "effects": [{"type": "research_progress", "amount": 110}]}
+			]
+		},
+		{
+			"id": "product_review", "title": "A Glowing Review", "weight": 2,
+			"conditions": {"requires_released_product": true},
+			"description": "A widely read newsletter calls your software 'the tool I did not know I needed'.",
+			"choices": [
+				{"label": "Pay to promote the review", "description": "Put it in front of more people.", "effects": [{"type": "money", "amount": -300, "category": "other"}, {"type": "company_reputation", "amount": 6}, {"type": "company_xp", "amount": 80}]},
+				{"label": "Enjoy it quietly", "description": "Free praise is still praise.", "effects": [{"type": "company_reputation", "amount": 2}]}
+			]
+		}
+	]
+}

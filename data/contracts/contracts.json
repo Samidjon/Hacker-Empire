@@ -1,0 +1,617 @@
+{
+	"contracts": [
+		{
+			"id": "fr_photo_archive",
+			"name": "Grandma's Photo Archive",
+			"client": "Private client",
+			"category": "file_recovery",
+			"alignment": "white",
+			"description": "A memory card died and took forty years of family photos with it. The client sent a disk image. Put the surviving fragments back in order and prove the result is intact.",
+			"difficulty": 1,
+			"required_level": 1,
+			"estimated_duration": 90,
+			"reward": 180,
+			"xp_reward": 45,
+			"reputation": {
+				"white": 2
+			},
+			"stages": [
+				{
+					"title": "Reassemble the fragments",
+					"instruction": "Fragments were recovered out of order. Click them from the lowest offset to the highest.",
+					"puzzle": "sequence",
+					"config": {
+						"pool": "file_fragments",
+						"count": 5
+					}
+				},
+				{
+					"title": "Verify the checksum",
+					"instruction": "Find the recovered file whose checksum is identical to the original.",
+					"puzzle": "match",
+					"config": {
+						"length": 12,
+						"options": 4,
+						"rounds": 1
+					}
+				}
+			]
+		},
+		{
+			"id": "cr_locked_diary",
+			"name": "The Locked Diary",
+			"client": "Private client",
+			"category": "cryptography",
+			"alignment": "white",
+			"description": "The client found their own childhood diary, written in a secret code they no longer remember. It is a simple letter shift. Find it.",
+			"difficulty": 1,
+			"required_level": 1,
+			"estimated_duration": 80,
+			"reward": 160,
+			"xp_reward": 40,
+			"reputation": {
+				"white": 1
+			},
+			"stages": [
+				{
+					"title": "First page",
+					"instruction": "Every letter was shifted by the same amount. Change the shift until the text reads as plain English, then submit.",
+					"puzzle": "cipher",
+					"config": {
+						"pool": "field_notes"
+					}
+				},
+				{
+					"title": "Last page",
+					"instruction": "This page uses a different shift. Decode it the same way.",
+					"puzzle": "cipher",
+					"config": {
+						"pool": "field_notes"
+					}
+				}
+			]
+		},
+		{
+			"id": "sd_checkout_crash",
+			"name": "Checkout Crash",
+			"client": "Paper Crane Books",
+			"category": "software_debugging",
+			"alignment": "white",
+			"description": "An online bookshop loses orders at checkout. They sent the code from their test server. Find the lines that are wrong.",
+			"difficulty": 1,
+			"required_level": 1,
+			"estimated_duration": 100,
+			"reward": 220,
+			"xp_reward": 50,
+			"reputation": {
+				"white": 2
+			},
+			"stages": [
+				{
+					"title": "Find the bug",
+					"instruction": "One line in this function is broken. Select it and submit.",
+					"puzzle": "spot",
+					"config": {
+						"pool": "buggy_code",
+						"normal": 6,
+						"anomalies": 1
+					}
+				},
+				{
+					"title": "Review the fix branch",
+					"instruction": "The rushed fix introduced new problems. Select every faulty line.",
+					"puzzle": "spot",
+					"config": {
+						"pool": "buggy_code",
+						"normal": 7,
+						"anomalies": 2
+					}
+				}
+			]
+		},
+		{
+			"id": "sa_corner_cafe",
+			"name": "Corner Cafe Audit",
+			"client": "Corner Cafe",
+			"category": "security_audit",
+			"alignment": "white",
+			"description": "A cafe wants to know if its back-office setup is safe before it starts taking card payments. They exported their settings for you to review.",
+			"difficulty": 1,
+			"required_level": 1,
+			"estimated_duration": 100,
+			"reward": 240,
+			"xp_reward": 55,
+			"reputation": {
+				"white": 3
+			},
+			"stages": [
+				{
+					"title": "Review the settings",
+					"instruction": "Select every setting that is a security problem.",
+					"puzzle": "spot",
+					"config": {
+						"pool": "audit_config",
+						"normal": 6,
+						"anomalies": 2
+					}
+				},
+				{
+					"title": "Review the firewall",
+					"instruction": "One firewall rule should not be there. Select it.",
+					"puzzle": "spot",
+					"config": {
+						"pool": "firewall_rules",
+						"normal": 6,
+						"anomalies": 1
+					}
+				}
+			]
+		},
+		{
+			"id": "ii_printer_mystery",
+			"name": "Who Printed 900 Pages?",
+			"client": "Harbor Street Dental",
+			"category": "incident_investigation",
+			"alignment": "white",
+			"description": "Something strange happened on a dental practice's network over the weekend. They sent the exported logs. Work out what happened and in what order.",
+			"difficulty": 1,
+			"required_level": 1,
+			"estimated_duration": 110,
+			"reward": 200,
+			"xp_reward": 50,
+			"reputation": {
+				"white": 2
+			},
+			"stages": [
+				{
+					"title": "Rebuild the timeline",
+					"instruction": "The log entries are shuffled. Click them from the earliest to the latest.",
+					"puzzle": "sequence",
+					"config": {
+						"pool": "incident_timeline",
+						"count": 5
+					}
+				},
+				{
+					"title": "Find the odd entry",
+					"instruction": "One entry in the access log does not belong to a normal working day. Select it.",
+					"puzzle": "spot",
+					"config": {
+						"pool": "access_log",
+						"normal": 6,
+						"anomalies": 1
+					}
+				}
+			]
+		},
+		{
+			"id": "mi_hot_laptop",
+			"name": "The Laptop That Runs Hot",
+			"client": "Private client",
+			"category": "malware_investigation",
+			"alignment": "white",
+			"description": "A laptop's fan never stops. The owner sent a snapshot of what is running, taken inside a sandbox. Find what should not be there.",
+			"difficulty": 2,
+			"required_level": 2,
+			"estimated_duration": 110,
+			"reward": 320,
+			"xp_reward": 70,
+			"reputation": {
+				"white": 3
+			},
+			"stages": [
+				{
+					"title": "Inspect the processes",
+					"instruction": "Select every process that looks malicious. Check names, locations and resource use.",
+					"puzzle": "spot",
+					"config": {
+						"pool": "process_list",
+						"normal": 7,
+						"anomalies": 2
+					}
+				},
+				{
+					"title": "Match the signature",
+					"instruction": "Find the sample whose signature is identical to the known one.",
+					"puzzle": "match",
+					"config": {
+						"length": 16,
+						"options": 5,
+						"rounds": 1
+					}
+				}
+			]
+		},
+		{
+			"id": "na_slow_office",
+			"name": "Why Is the Office So Slow?",
+			"client": "Tallgrass Accounting",
+			"category": "network_analysis",
+			"alignment": "white",
+			"description": "An accounting office says the network crawls every afternoon. They recorded the traffic on their own network and sent it to you.",
+			"difficulty": 2,
+			"required_level": 3,
+			"estimated_duration": 130,
+			"reward": 380,
+			"xp_reward": 85,
+			"reputation": {
+				"white": 3
+			},
+			"stages": [
+				{
+					"title": "Read the capture",
+					"instruction": "Select every connection that should not be happening on an office network.",
+					"puzzle": "spot",
+					"config": {
+						"pool": "packet_capture",
+						"normal": 7,
+						"anomalies": 2
+					}
+				},
+				{
+					"title": "Reorder the stream",
+					"instruction": "These packets arrived out of order. Click them from the lowest sequence number to the highest.",
+					"puzzle": "sequence",
+					"config": {
+						"pool": "packet_stream",
+						"count": 6
+					}
+				}
+			]
+		},
+		{
+			"id": "cr_puzzle_hunt",
+			"name": "Dead Drop",
+			"client": "Anonymous (DarkNode)",
+			"category": "cryptography",
+			"alignment": "underground",
+			"description": "An anonymous board member runs a city-wide puzzle hunt and is stuck on a rival team's clues. The pay is good and nobody asks who wrote them. Underground work raises your heat.",
+			"difficulty": 2,
+			"required_level": 3,
+			"estimated_duration": 140,
+			"reward": 520,
+			"xp_reward": 90,
+			"reputation": {
+				"underground": 4,
+				"heat": 6
+			},
+			"stages": [
+				{
+					"title": "First clue",
+					"instruction": "Find the letter shift that turns this into plain English, then submit.",
+					"puzzle": "cipher",
+					"config": {
+						"pool": "puzzle_hunt"
+					}
+				},
+				{
+					"title": "Verify the token",
+					"instruction": "Only one of these tokens is identical to the one on the clue card.",
+					"puzzle": "match",
+					"config": {
+						"length": 16,
+						"options": 5,
+						"rounds": 1
+					}
+				},
+				{
+					"title": "Final clue",
+					"instruction": "A different shift this time.",
+					"puzzle": "cipher",
+					"config": {
+						"pool": "puzzle_hunt"
+					}
+				}
+			]
+		},
+		{
+			"id": "fr_startup_database",
+			"name": "The Startup's Lost Database",
+			"client": "Lumen Labs",
+			"category": "file_recovery",
+			"alignment": "white",
+			"description": "A two-person startup lost its only database to a failed disk. They sent an image of what is left. Rebuild it before their investor demo.",
+			"difficulty": 3,
+			"required_level": 4,
+			"estimated_duration": 170,
+			"reward": 600,
+			"xp_reward": 120,
+			"reputation": {
+				"white": 4
+			},
+			"stages": [
+				{
+					"title": "Order the pages",
+					"instruction": "Click the database pages from the lowest offset to the highest.",
+					"puzzle": "sequence",
+					"config": {
+						"pool": "database_pages",
+						"count": 7
+					}
+				},
+				{
+					"title": "Verify two checksums",
+					"instruction": "For each round, find the checksum identical to the original.",
+					"puzzle": "match",
+					"config": {
+						"length": 16,
+						"options": 6,
+						"rounds": 2
+					}
+				},
+				{
+					"title": "Order the journal",
+					"instruction": "Now the journal fragments, lowest offset first.",
+					"puzzle": "sequence",
+					"config": {
+						"pool": "file_fragments",
+						"count": 6
+					}
+				}
+			],
+			"required_hardware": [
+				"ssd:1"
+			]
+		},
+		{
+			"id": "sa_clinic_review",
+			"name": "Clinic Compliance Review",
+			"client": "Northside Clinic",
+			"category": "security_audit",
+			"alignment": "white",
+			"description": "A clinic must pass a security review before it can store patient records. They gave you a copy of their configuration, firewall and a day of logs.",
+			"difficulty": 3,
+			"required_level": 5,
+			"estimated_duration": 190,
+			"reward": 800,
+			"xp_reward": 150,
+			"reputation": {
+				"white": 6
+			},
+			"stages": [
+				{
+					"title": "Configuration",
+					"instruction": "Select every setting that is a security problem.",
+					"puzzle": "spot",
+					"config": {
+						"pool": "audit_config",
+						"normal": 8,
+						"anomalies": 3
+					}
+				},
+				{
+					"title": "Firewall",
+					"instruction": "Select every rule that should not be there.",
+					"puzzle": "spot",
+					"config": {
+						"pool": "firewall_rules",
+						"normal": 7,
+						"anomalies": 2
+					}
+				},
+				{
+					"title": "Access log",
+					"instruction": "Select every entry that is not normal working-day activity.",
+					"puzzle": "spot",
+					"config": {
+						"pool": "access_log",
+						"normal": 8,
+						"anomalies": 2
+					}
+				}
+			]
+		},
+		{
+			"id": "mi_ransomware_drill",
+			"name": "Ransomware Fire Drill",
+			"client": "Kestrel Logistics",
+			"category": "malware_investigation",
+			"alignment": "white",
+			"description": "A logistics firm ran a ransomware exercise in an isolated lab and wants an outside report on what the sample did and how to recognise it.",
+			"difficulty": 4,
+			"required_level": 6,
+			"estimated_duration": 210,
+			"reward": 950,
+			"xp_reward": 180,
+			"reputation": {
+				"white": 6
+			},
+			"stages": [
+				{
+					"title": "Reconstruct the attack",
+					"instruction": "Click the events from the earliest to the latest.",
+					"puzzle": "sequence",
+					"config": {
+						"pool": "malware_execution",
+						"count": 6
+					}
+				},
+				{
+					"title": "Inspect the processes",
+					"instruction": "Select every process that looks malicious.",
+					"puzzle": "spot",
+					"config": {
+						"pool": "process_list",
+						"normal": 9,
+						"anomalies": 3
+					}
+				},
+				{
+					"title": "Match two signatures",
+					"instruction": "For each round, find the sample identical to the known signature.",
+					"puzzle": "match",
+					"config": {
+						"length": 20,
+						"options": 6,
+						"rounds": 2
+					}
+				}
+			],
+			"required_skills": {
+				"re_disassembly": 1
+			}
+		},
+		{
+			"id": "na_capture_review",
+			"name": "Capture Review, No Questions",
+			"client": "Anonymous (DarkNode)",
+			"category": "network_analysis",
+			"alignment": "underground",
+			"description": "Someone on the board has a traffic recording from a training range and wants a second opinion without their name on it. Underground work raises your heat.",
+			"difficulty": 4,
+			"required_level": 7,
+			"estimated_duration": 230,
+			"reward": 1300,
+			"xp_reward": 200,
+			"reputation": {
+				"underground": 6,
+				"heat": 10
+			},
+			"stages": [
+				{
+					"title": "Read the capture",
+					"instruction": "Select every connection that should not be there.",
+					"puzzle": "spot",
+					"config": {
+						"pool": "packet_capture",
+						"normal": 9,
+						"anomalies": 3
+					}
+				},
+				{
+					"title": "Reorder the stream",
+					"instruction": "Click the packets from the lowest sequence number to the highest.",
+					"puzzle": "sequence",
+					"config": {
+						"pool": "packet_stream",
+						"count": 8
+					}
+				},
+				{
+					"title": "Decode the note",
+					"instruction": "A note was hidden in the stream. Find the letter shift.",
+					"puzzle": "cipher",
+					"config": {
+						"pool": "puzzle_hunt"
+					}
+				}
+			],
+			"required_hardware": [
+				"network:2"
+			]
+		},
+		{
+			"id": "sd_legacy_payroll",
+			"name": "Legacy Payroll",
+			"client": "Ironbridge Foundry",
+			"category": "software_debugging",
+			"alignment": "white",
+			"description": "A foundry's payroll program was written by someone who retired fifteen years ago. It pays people the wrong amounts. They sent a copy of the code.",
+			"difficulty": 4,
+			"required_level": 8,
+			"estimated_duration": 230,
+			"reward": 1400,
+			"xp_reward": 240,
+			"reputation": {
+				"white": 7
+			},
+			"stages": [
+				{
+					"title": "Module one",
+					"instruction": "Select every faulty line.",
+					"puzzle": "spot",
+					"config": {
+						"pool": "buggy_code",
+						"normal": 9,
+						"anomalies": 3
+					}
+				},
+				{
+					"title": "Module two",
+					"instruction": "Select every faulty line.",
+					"puzzle": "spot",
+					"config": {
+						"pool": "buggy_code",
+						"normal": 10,
+						"anomalies": 3
+					}
+				},
+				{
+					"title": "Verify the build",
+					"instruction": "Find the build whose checksum is identical to the approved one.",
+					"puzzle": "match",
+					"config": {
+						"length": 20,
+						"options": 6,
+						"rounds": 1
+					}
+				}
+			],
+			"required_skills": {
+				"prog_clean_code": 2
+			}
+		},
+		{
+			"id": "ii_breach_tabletop",
+			"name": "Breach Tabletop Exercise",
+			"client": "Helix Financial",
+			"category": "incident_investigation",
+			"alignment": "white",
+			"description": "A financial firm stages a full breach exercise on its training range and hires you to investigate it as if it were real. Everything you need is in the evidence pack.",
+			"difficulty": 5,
+			"required_level": 10,
+			"estimated_duration": 300,
+			"reward": 2200,
+			"xp_reward": 380,
+			"reputation": {
+				"white": 10
+			},
+			"stages": [
+				{
+					"title": "Rebuild the timeline",
+					"instruction": "Click the events from the earliest to the latest.",
+					"puzzle": "sequence",
+					"config": {
+						"pool": "incident_timeline",
+						"count": 8
+					}
+				},
+				{
+					"title": "Access log",
+					"instruction": "Select every entry that is not normal working-day activity.",
+					"puzzle": "spot",
+					"config": {
+						"pool": "access_log",
+						"normal": 10,
+						"anomalies": 3
+					}
+				},
+				{
+					"title": "Network capture",
+					"instruction": "Select every connection that should not be there.",
+					"puzzle": "spot",
+					"config": {
+						"pool": "packet_capture",
+						"normal": 9,
+						"anomalies": 3
+					}
+				},
+				{
+					"title": "The intruder's note",
+					"instruction": "Find the letter shift.",
+					"puzzle": "cipher",
+					"config": {
+						"pool": "incident_notes"
+					}
+				}
+			],
+			"required_hardware": [
+				"cpu:2",
+				"ram:2"
+			],
+			"required_skills": {
+				"sec_incident_response": 1
+			}
+		}
+	]
+}

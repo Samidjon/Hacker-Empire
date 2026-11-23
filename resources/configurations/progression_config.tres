@@ -1,0 +1,41 @@
+[gd_resource type="Resource" script_class="ProgressionConfig" format=3]
+
+[ext_resource type="Script" path="res://scripts/progression/progression_config.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/progression/rank_definition.gd" id="2"]
+
+[sub_resource type="Resource" id="rank_beginner"]
+script = ExtResource("2")
+rank_name = "Beginner"
+min_level = 1
+
+[sub_resource type="Resource" id="rank_amateur"]
+script = ExtResource("2")
+rank_name = "Amateur"
+min_level = 6
+
+[sub_resource type="Resource" id="rank_professional"]
+script = ExtResource("2")
+rank_name = "Professional"
+min_level = 11
+
+[sub_resource type="Resource" id="rank_expert"]
+script = ExtResource("2")
+rank_name = "Expert"
+min_level = 21
+
+[sub_resource type="Resource" id="rank_specialist"]
+script = ExtResource("2")
+rank_name = "Specialist"
+min_level = 31
+
+[sub_resource type="Resource" id="rank_legend"]
+script = ExtResource("2")
+rank_name = "Legend"
+min_level = 41
+
+[resource]
+script = ExtResource("1")
+max_level = 50
+base_xp = 100
+xp_growth_exponent = 1.5
+ranks = Array[ExtResource("2")]([SubResource("rank_beginner"), SubResource("rank_amateur"), SubResource("rank_professional"), SubResource("rank_expert"), SubResource("rank_specialist"), SubResource("rank_legend")])

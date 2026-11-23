@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="EmployeeConfig" format=3]
+
+[ext_resource type="Script" path="res://scripts/employees/employee_config.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+candidate_count = 4
+signing_fee_days = 2
+max_skill = 10
+xp_per_level = 100
+salary_per_level = 6
+unpaid_morale_penalty = 25.0
+low_energy_threshold = 20.0
+overwork_morale_penalty = 8.0
+resignation_morale = 0.0
+company_xp_per_income = 0.15

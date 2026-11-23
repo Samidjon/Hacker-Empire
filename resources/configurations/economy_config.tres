@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="EconomyConfig" format=3]
+
+[ext_resource type="Script" path="res://scripts/economy/economy_config.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+starting_money = 1500
+max_transaction_history = 100

@@ -1,0 +1,128 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/applications/dashboard.gd" id="1"]
+[ext_resource type="PackedScene" path="res://scenes/ui/StatCard.tscn" id="2"]
+
+[node name="Dashboard" type="VBoxContainer"]
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 16
+script = ExtResource("1")
+
+[node name="ProfilePanel" type="PanelContainer" parent="."]
+layout_mode = 2
+
+[node name="VBox" type="VBoxContainer" parent="ProfilePanel"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Identity" type="HBoxContainer" parent="ProfilePanel/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="AliasLabel" type="Label" parent="ProfilePanel/VBox/Identity"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"HeaderLabel"
+text = "ALIAS"
+
+[node name="RankLabel" type="Label" parent="ProfilePanel/VBox/Identity"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.659, 0.333, 0.969, 1)
+text = "RANK"
+
+[node name="Progress" type="HBoxContainer" parent="ProfilePanel/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="LevelLabel" type="Label" parent="ProfilePanel/VBox/Progress"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+text = "LEVEL 1 / 50"
+
+[node name="XpBar" type="ProgressBar" parent="ProfilePanel/VBox/Progress"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 22)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+show_percentage = false
+
+[node name="XpLabel" type="Label" parent="ProfilePanel/VBox/Progress"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(190, 0)
+layout_mode = 2
+theme_type_variation = &"DimLabel"
+text = "0 / 100 XP"
+horizontal_alignment = 2
+
+[node name="StatsGrid" type="GridContainer" parent="."]
+layout_mode = 2
+theme_override_constants/h_separation = 16
+theme_override_constants/v_separation = 16
+columns = 4
+
+[node name="BalanceCard" parent="StatsGrid" instance=ExtResource("2")]
+unique_name_in_owner = true
+layout_mode = 2
+title = "BALANCE"
+
+[node name="EarnedCard" parent="StatsGrid" instance=ExtResource("2")]
+unique_name_in_owner = true
+layout_mode = 2
+title = "TOTAL EARNED"
+
+[node name="SpentCard" parent="StatsGrid" instance=ExtResource("2")]
+unique_name_in_owner = true
+layout_mode = 2
+title = "TOTAL SPENT"
+
+[node name="PlaytimeCard" parent="StatsGrid" instance=ExtResource("2")]
+unique_name_in_owner = true
+layout_mode = 2
+title = "PLAYTIME"
+
+[node name="WhiteRepCard" parent="StatsGrid" instance=ExtResource("2")]
+unique_name_in_owner = true
+layout_mode = 2
+title = "WHITE REPUTATION"
+
+[node name="UndergroundRepCard" parent="StatsGrid" instance=ExtResource("2")]
+unique_name_in_owner = true
+layout_mode = 2
+title = "UNDERGROUND REPUTATION"
+
+[node name="HeatCard" parent="StatsGrid" instance=ExtResource("2")]
+unique_name_in_owner = true
+layout_mode = 2
+title = "HEAT LEVEL"
+
+[node name="TotalXpCard" parent="StatsGrid" instance=ExtResource("2")]
+unique_name_in_owner = true
+layout_mode = 2
+title = "LIFETIME XP"
+
+[node name="ActivityPanel" type="PanelContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBox" type="VBoxContainer" parent="ActivityPanel"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Header" type="Label" parent="ActivityPanel/VBox"]
+layout_mode = 2
+theme_type_variation = &"DimLabel"
+text = "RECENT TRANSACTIONS"
+
+[node name="TransactionLog" type="RichTextLabel" parent="ActivityPanel/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="PlaytimeTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+autostart = true

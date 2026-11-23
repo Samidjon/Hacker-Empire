@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SaveConfig" format=3]
+
+[ext_resource type="Script" path="res://scripts/save/save_config.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+slot_count = 3
+save_directory = "user://saves"
+autosave_enabled = true
+autosave_interval_seconds = 120.0

@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="OrganizationConfig" format=3]
+
+[ext_resource type="Script" path="res://scripts/organization/organization_config.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+founding_cost = 1500
+required_level = 3
+min_name_length = 3
+max_name_length = 24
+day_length_seconds = 120.0
+report_history = 14
+max_company_level = 10
+xp_base = 150
+xp_exponent = 1.5
+reward_percent_per_level = 2.0
+contract_xp_share = 0.5
+contract_reputation = 1
+unpaid_rent_reputation_penalty = 3

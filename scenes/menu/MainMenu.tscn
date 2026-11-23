@@ -1,0 +1,189 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/menu/main_menu.gd" id="1"]
+[ext_resource type="PackedScene" path="res://scenes/ui/NeonBackground.tscn" id="2"]
+[ext_resource type="PackedScene" path="res://scenes/ui/ConfirmPopup.tscn" id="3"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1")
+
+[node name="Background" parent="." instance=ExtResource("2")]
+layout_mode = 1
+
+[node name="Center" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Content" type="VBoxContainer" parent="Center"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Title" type="Label" parent="Center/Content"]
+layout_mode = 2
+theme_type_variation = &"TitleLabel"
+text = "HACKER EMPIRE"
+horizontal_alignment = 1
+
+[node name="Subtitle" type="Label" parent="Center/Content"]
+layout_mode = 2
+theme_type_variation = &"DimLabel"
+text = "FROM A ONE-ROOM APARTMENT TO A TECHNOLOGY EMPIRE"
+horizontal_alignment = 1
+
+[node name="Spacer" type="Control" parent="Center/Content"]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+
+[node name="MainPanel" type="VBoxContainer" parent="Center/Content"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(420, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 14
+
+[node name="ContinueButton" type="Button" parent="Center/Content/MainPanel"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 56)
+layout_mode = 2
+text = "Continue"
+
+[node name="NewGameButton" type="Button" parent="Center/Content/MainPanel"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 56)
+layout_mode = 2
+text = "New Game"
+
+[node name="LoadGameButton" type="Button" parent="Center/Content/MainPanel"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 56)
+layout_mode = 2
+text = "Load Game"
+
+[node name="QuitButton" type="Button" parent="Center/Content/MainPanel"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 56)
+layout_mode = 2
+theme_type_variation = &"DangerButton"
+text = "Quit"
+
+[node name="SlotPanel" type="PanelContainer" parent="Center/Content"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="VBox" type="VBoxContainer" parent="Center/Content/SlotPanel"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="SlotTitleLabel" type="Label" parent="Center/Content/SlotPanel/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"HeaderLabel"
+text = "CHOOSE A SLOT"
+
+[node name="SlotList" type="VBoxContainer" parent="Center/Content/SlotPanel/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="StatusLabel" type="Label" parent="Center/Content/SlotPanel/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.271, 0.376, 1)
+autowrap_mode = 3
+
+[node name="SlotBackButton" type="Button" parent="Center/Content/SlotPanel/VBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Back"
+
+[node name="NewGamePanel" type="PanelContainer" parent="Center/Content"]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(560, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="VBox" type="VBoxContainer" parent="Center/Content/NewGamePanel"]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Header" type="HBoxContainer" parent="Center/Content/NewGamePanel/VBox"]
+layout_mode = 2
+
+[node name="HeaderLabel" type="Label" parent="Center/Content/NewGamePanel/VBox/Header"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"HeaderLabel"
+text = "NEW IDENTITY"
+
+[node name="NewGameSlotLabel" type="Label" parent="Center/Content/NewGamePanel/VBox/Header"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"DimLabel"
+text = "SLOT 1"
+
+[node name="Prompt" type="Label" parent="Center/Content/NewGamePanel/VBox"]
+layout_mode = 2
+text = "Choose your hacker alias"
+
+[node name="AliasEdit" type="LineEdit" parent="Center/Content/NewGamePanel/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+placeholder_text = "e.g. Zero_Cool"
+
+[node name="AliasErrorLabel" type="Label" parent="Center/Content/NewGamePanel/VBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 26)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.271, 0.376, 1)
+autowrap_mode = 3
+
+[node name="Buttons" type="HBoxContainer" parent="Center/Content/NewGamePanel/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 16
+alignment = 2
+
+[node name="NewGameBackButton" type="Button" parent="Center/Content/NewGamePanel/VBox/Buttons"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+text = "Back"
+
+[node name="StartButton" type="Button" parent="Center/Content/NewGamePanel/VBox/Buttons"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Start Game"
+
+[node name="VersionLabel" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = -48.0
+offset_right = 224.0
+offset_bottom = -20.0
+grow_vertical = 0
+theme_type_variation = &"DimLabel"
+text = "v0.0.0"
+
+[node name="ConfirmPopup" parent="." instance=ExtResource("3")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1

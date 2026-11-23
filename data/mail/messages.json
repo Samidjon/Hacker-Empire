@@ -1,0 +1,201 @@
+{
+	"messages": [
+		{
+			"id": "welcome_sysop",
+			"from": "sysop@darknode.bbs",
+			"subject": "Welcome to the grid, {alias}",
+			"body": "{alias},\n\nYour account on DarkNode is live. A few things before you get ideas:\n\n- Everything we trade in here is simulation work. Training ranges, recovery jobs, audits. Clients hand you a sandbox, you fix what is broken inside it.\n- Your Dashboard shows where you stand. Finance shows where your money went.\n- The Terminal understands plain commands. Type 'help'.\n\nThe contract board is online. Open Contracts, pick something at your level and read the brief before you accept. Three mistakes and the client walks.\n\n- sysop",
+			"trigger": {
+				"type": "new_game"
+			}
+		},
+		{
+			"id": "welcome_mara",
+			"from": "mara@secondhand-silicon.shop",
+			"subject": "About that old rig",
+			"body": "Hey {alias},\n\nHeard you finally got that fossil to boot. Do not push it too hard, the cooling is mostly dust.\n\nMy shop is on your desktop now: open Marketplace. Start cheap. A tower cooler or a memory kit does more for you than it sounds.\n\n- Mara",
+			"trigger": {
+				"type": "new_game"
+			}
+		},
+		{
+			"id": "first_contract",
+			"from": "sysop@darknode.bbs",
+			"subject": "First job done",
+			"body": "{alias},\n\nYour first contract cleared. The client paid, nobody complained, and your name is on the board now.\n\nA clean job with no mistakes pays a bonus. Jobs from anonymous clients pay more and raise your heat. Choose accordingly.\n\n- sysop",
+			"trigger": {
+				"type": "contracts_completed",
+				"count": 1
+			}
+		},
+		{
+			"id": "level_2",
+			"from": "sysop@darknode.bbs",
+			"subject": "You are learning",
+			"body": "{alias},\n\nLevel 2. Not much, but everybody on this board started exactly there.\n\nKeep reading the files in /docs. The people who last in this trade are the ones who read the boring parts.\n\n- sysop",
+			"trigger": {
+				"type": "level",
+				"level": 2
+			}
+		},
+		{
+			"id": "rank_amateur",
+			"from": "sysop@darknode.bbs",
+			"subject": "New rank: Amateur",
+			"body": "{alias},\n\nYou are no longer a beginner. Your name shows up in the member list now instead of the guest list.\n\nDo not let it go to your head.\n\n- sysop",
+			"trigger": {
+				"type": "level",
+				"level": 6
+			}
+		},
+		{
+			"id": "rank_professional",
+			"from": "sysop@darknode.bbs",
+			"subject": "New rank: Professional",
+			"body": "{alias},\n\nProfessional. Clients will start asking for you by name. That is good for business and bad for sleep.\n\n- sysop",
+			"trigger": {
+				"type": "level",
+				"level": 11
+			}
+		},
+		{
+			"id": "rank_expert",
+			"from": "sysop@darknode.bbs",
+			"subject": "New rank: Expert",
+			"body": "{alias},\n\nExpert. There are maybe forty of you on the whole board. Spend it wisely.\n\n- sysop",
+			"trigger": {
+				"type": "level",
+				"level": 21
+			}
+		},
+		{
+			"id": "rank_specialist",
+			"from": "sysop@darknode.bbs",
+			"subject": "New rank: Specialist",
+			"body": "{alias},\n\nSpecialist. People are building careers on notes you wrote in an afternoon.\n\n- sysop",
+			"trigger": {
+				"type": "level",
+				"level": 31
+			}
+		},
+		{
+			"id": "rank_legend",
+			"from": "sysop@darknode.bbs",
+			"subject": "New rank: Legend",
+			"body": "{alias},\n\nI remember when you could not find the help command.\n\nLegend. There is nothing left for me to teach you.\n\n- sysop",
+			"trigger": {
+				"type": "level",
+				"level": 41
+			}
+		},
+		{
+			"id": "mara_level_3",
+			"from": "mara@secondhand-silicon.shop",
+			"subject": "New stock for you",
+			"body": "{alias},\n\nYou are getting good enough that the mid-range parts are worth your money. Have a look at the tier 2 shelf.\n\nAnd spend your skill points. The Skills app shows what each one does. Unspent points are just a number.\n\n- Mara",
+			"trigger": {
+				"type": "level",
+				"level": 3
+			}
+		},
+		{
+			"id": "incorporate_hint",
+			"from": "sysop@darknode.bbs",
+			"subject": "You could put a name on the door",
+			"body": "{alias},\n\nYou are turning work away. That is the moment most people on this board register a company.\n\nOpen Organization. It costs a registration fee, and after that you can rent desks and hire people. Staff either bring in money on their own or back you up on your contracts.\n\nPeople cost money every day whether or not they earn it. Watch the daily report.\n\n- sysop",
+			"trigger": {
+				"type": "level",
+				"level": 3
+			}
+		},
+		{
+			"id": "company_founded",
+			"from": "registry@grid-commerce.office",
+			"subject": "Registration confirmed",
+			"body": "To {alias},\n\nYour company is now registered.\n\nYou currently operate from a home office with one desk. Candidates apply every business day; see the Employees application. Rent and salaries are charged at the end of each business day.\n\nGrid Commerce Office",
+			"trigger": {
+				"type": "company_founded"
+			}
+		},
+		{
+			"id": "research_hint",
+			"from": "sysop@darknode.bbs",
+			"subject": "Stop renting your tools",
+			"body": "{alias},\n\nYou are good enough to build your own methods now. Open Research.\n\nA project costs money up front and takes time; a faster machine or a GPU shortens it. What you finish stays with you for good, and some of it can be turned into software you sell.\n\n- sysop",
+			"trigger": {
+				"type": "contracts_completed",
+				"count": 2
+			}
+		},
+		{
+			"id": "story_tools",
+			"from": "sysop@darknode.bbs",
+			"subject": "You finished a job. Now get serious",
+			"body": "{alias},\n\nOne clean contract. Good. Now stop working with your hands tied.\n\nBuy one part from Mara, spend a skill point, and do three contracts in all. Your objectives are on screen whenever you are away from the computer.\n\n- sysop",
+			"trigger": {
+				"type": "story_chapter",
+				"chapter": 1
+			}
+		},
+		{
+			"id": "story_door",
+			"from": "sysop@darknode.bbs",
+			"subject": "You are turning clients away",
+			"body": "{alias},\n\nYou have the kit and the habits. What you do not have is a name clients can put on an invoice.\n\nReach level 3, register a company, and finish a research project so you own at least one method nobody else has.\n\n- sysop",
+			"trigger": {
+				"type": "story_chapter",
+				"chapter": 2
+			}
+		},
+		{
+			"id": "story_alone",
+			"from": "mara@secondhand-silicon.shop",
+			"subject": "A company of one",
+			"body": "{alias},\n\nCongratulations on the paperwork. Now get out of your bedroom.\n\nRent real desks and hire two people. Once you have an office, use the door in your apartment to go there. It is good for them to see you.\n\n- Mara",
+			"trigger": {
+				"type": "story_chapter",
+				"chapter": 3
+			}
+		},
+		{
+			"id": "story_methods",
+			"from": "sysop@darknode.bbs",
+			"subject": "Stop selling hours",
+			"body": "{alias},\n\nYou have people now, so use them. Put someone on Research and someone on Product Development.\n\nThree finished projects, one product on the market, company level 2. Clients pay for your time; customers pay for something you built once.\n\n- sysop",
+			"trigger": {
+				"type": "story_chapter",
+				"chapter": 4
+			}
+		},
+		{
+			"id": "story_scale",
+			"from": "mara@secondhand-silicon.shop",
+			"subject": "They are calling you 'the tech people'",
+			"body": "{alias},\n\nThe noodle shop asked me if you were hiring. I said probably.\n\nFive staff, two products, company level 4, and get yourself to level 10. You will need a bigger office first.\n\n- Mara",
+			"trigger": {
+				"type": "story_chapter",
+				"chapter": 5
+			}
+		},
+		{
+			"id": "story_empire",
+			"from": "sysop@darknode.bbs",
+			"subject": "The last stretch",
+			"body": "{alias},\n\nThere is one more step and you know what it is.\n\nCompany level 8. The Tower Suite. Ten people, four products, level 20. After that there is nothing left for me to send you.\n\n- sysop",
+			"trigger": {
+				"type": "story_chapter",
+				"chapter": 6
+			}
+		},
+		{
+			"id": "story_complete",
+			"from": "sysop@darknode.bbs",
+			"subject": "Look at what you built",
+			"body": "{alias},\n\nI ran this board for a long time and watched a lot of people start in one room.\n\nYou are the one who finished.\n\nThe board is yours if you want it. Keep playing as long as you like.\n\n- sysop",
+			"trigger": {
+				"type": "story_chapter",
+				"chapter": 7
+			}
+		}
+	]
+}

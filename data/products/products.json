@@ -1,0 +1,9 @@
+{
+	"products": [
+		{"id": "log_lens", "name": "LogLens", "kind": "one_time", "required_research": "log_correlation", "development_cost": 800, "development_points": 60, "daily_revenue": 140, "decay": 0.9, "minimum_daily_revenue": 15, "description": "A desktop tool that lines up logs from different machines. Sold once per customer, so sales are strongest at launch and fade."},
+		{"id": "vault_keeper", "name": "VaultKeeper", "kind": "one_time", "required_research": "vault_core", "development_cost": 1200, "development_points": 90, "daily_revenue": 210, "decay": 0.92, "minimum_daily_revenue": 25, "description": "A password manager for small offices. A one-time licence."},
+		{"id": "net_sentinel", "name": "NetSentinel", "kind": "subscription", "required_research": "traffic_classifier", "development_cost": 2500, "development_points": 160, "price_per_subscriber": 4, "subscriber_growth": 6, "subscriber_cap": 90, "maintenance_cost": 45, "description": "A network monitoring service. Customers pay every day they stay; your servers cost money every day they run."},
+		{"id": "pocket_analyst", "name": "Pocket Analyst", "kind": "subscription", "required_research": "assistant_model", "development_cost": 5000, "development_points": 280, "price_per_subscriber": 6, "subscriber_growth": 9, "subscriber_cap": 160, "maintenance_cost": 120, "description": "Your assistant model as a service for other freelancers."},
+		{"id": "ghost_backup", "name": "GhostBackup", "kind": "subscription", "required_research": "zero_knowledge_backup", "development_cost": 9000, "development_points": 420, "price_per_subscriber": 8, "subscriber_growth": 12, "subscriber_cap": 260, "maintenance_cost": 260, "description": "Backups nobody but the customer can read. Expensive to run, and worth it."}
+	]
+}

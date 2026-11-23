@@ -1,0 +1,224 @@
+{
+	"sequence": {
+		"file_fragments": {
+			"key_format": "hex",
+			"ordered": false,
+			"lines": [
+				"header.bin", "index.tbl", "chunk_a.dat", "chunk_b.dat", "chunk_c.dat",
+				"thumbs.cache", "meta.xml", "journal.log", "manifest.lst", "footer.sig"
+			]
+		},
+		"database_pages": {
+			"key_format": "hex",
+			"ordered": false,
+			"lines": [
+				"page: customers", "page: orders", "page: invoices", "page: products",
+				"page: sessions", "page: audit_trail", "page: settings", "page: index_root",
+				"page: free_list", "page: schema"
+			]
+		},
+		"incident_timeline": {
+			"key_format": "time",
+			"ordered": true,
+			"lines": [
+				"phishing mail delivered to the front desk",
+				"attachment opened on the front desk PC",
+				"new scheduled task created on the front desk PC",
+				"front desk account logs in to the file server",
+				"large archive created in a temp folder",
+				"archive copied to an unknown external address",
+				"antivirus alert raised and ignored",
+				"help desk ticket: 'my files look strange'",
+				"file server isolated from the network",
+				"passwords reset for all front desk accounts"
+			]
+		},
+		"malware_execution": {
+			"key_format": "time",
+			"ordered": true,
+			"lines": [
+				"user runs invoice_scan.pdf.exe",
+				"dropper writes a file to the temp folder",
+				"dropper adds a run-at-startup entry",
+				"payload contacts its simulated control server",
+				"payload starts encrypting the test documents",
+				"ransom note written to the desktop",
+				"shadow copies deleted",
+				"payload removes its own installer"
+			]
+		},
+		"packet_stream": {
+			"key_format": "sequence",
+			"ordered": false,
+			"lines": [
+				"SYN  workstation -> server", "ACK  server -> workstation", "PSH  login request",
+				"PSH  login accepted", "PSH  file listing", "PSH  download chunk",
+				"PSH  download chunk (retransmit)", "ACK  download complete", "FIN  workstation -> server",
+				"FIN  server -> workstation"
+			]
+		}
+	},
+	"cipher": {
+		"field_notes": {
+			"phrases": [
+				"THE SPARE KEY IS UNDER THE BLUE FLOWER POT",
+				"MEET ME AT THE OLD LIBRARY AFTER SCHOOL",
+				"I HID THE BIRTHDAY PRESENT IN THE ATTIC",
+				"DO NOT TELL ANYONE ABOUT THE SURPRISE PARTY",
+				"THE RECIPE BOOK IS BEHIND THE CLOCK",
+				"MY FIRST DOG WAS CALLED CAPTAIN BISCUIT"
+			]
+		},
+		"puzzle_hunt": {
+			"phrases": [
+				"THE NEXT CLUE IS TAPED UNDER THE THIRD BENCH",
+				"FOLLOW THE RED LANTERNS TO THE RIVER",
+				"COUNT THE WINDOWS ON THE CLOCK TOWER",
+				"THE PRIZE IS BEHIND THE PAINTING OF THE WHALE",
+				"ONLY THE PATIENT REACH THE FINAL ROOM",
+				"LOOK FOR THE DOOR WITH NO HANDLE"
+			]
+		},
+		"incident_notes": {
+			"phrases": [
+				"THE BACKUP SERVER WAS NEVER PATCHED",
+				"THE INTRUDER USED A REAL EMPLOYEE ACCOUNT",
+				"CHECK THE PRINTER LOGS FROM LAST FRIDAY",
+				"THE EXERCISE ENDS WHEN THE ARCHIVE IS FOUND",
+				"NOBODY CHANGED THE DEFAULT PASSWORD"
+			]
+		}
+	},
+	"spot": {
+		"audit_config": {
+			"normal": [
+				"ssh: root login disabled",
+				"tls: minimum version 1.3",
+				"password policy: 14 characters minimum",
+				"updates: installed automatically",
+				"logging: enabled, kept for 90 days",
+				"admin accounts: two-factor required",
+				"guest account: disabled",
+				"disk encryption: enabled",
+				"session timeout: 15 minutes",
+				"backups: nightly, tested monthly"
+			],
+			"anomalies": [
+				"ssh: root login allowed with password",
+				"admin password: admin",
+				"remote desktop: open to the whole internet",
+				"telnet service: enabled",
+				"backup storage: public, no password",
+				"updates: last installed 4 years ago"
+			]
+		},
+		"firewall_rules": {
+			"normal": [
+				"allow  HTTPS 443  from anywhere  to web server",
+				"allow  SSH 22  from admin office  to servers",
+				"allow  DNS 53  from office  to internal resolver",
+				"allow  mail 587  from mail server  to provider",
+				"deny  everything else  inbound",
+				"allow  backup 8443  from servers  to backup vault",
+				"allow  printing 631  from office  to print server",
+				"log  all denied connections"
+			],
+			"anomalies": [
+				"allow  ALL ports  from anywhere  to database",
+				"allow  TELNET 23  from anywhere  to router",
+				"allow  remote desktop 3389  from anywhere  to reception PC",
+				"rule disabled: deny everything else inbound"
+			]
+		},
+		"process_list": {
+			"normal": [
+				"explorer.exe        user     84 MB   C:\\Windows",
+				"svchost.exe         system   31 MB   C:\\Windows\\System32",
+				"browser.exe         user    612 MB   C:\\Program Files\\Browser",
+				"mailclient.exe      user    140 MB   C:\\Program Files\\Mail",
+				"antivirus.exe       system   96 MB   C:\\Program Files\\Shield",
+				"spooler.exe         system   12 MB   C:\\Windows\\System32",
+				"office_suite.exe    user    220 MB   C:\\Program Files\\Office",
+				"audio_service.exe   system    9 MB   C:\\Windows\\System32",
+				"updater.exe         system   18 MB   C:\\Program Files\\Browser",
+				"search_index.exe    system   44 MB   C:\\Windows\\System32"
+			],
+			"anomalies": [
+				"svch0st.exe         user    890 MB   C:\\Users\\Public\\Temp",
+				"invoice_scan.pdf.exe  user   55 MB   C:\\Users\\front_desk\\Downloads",
+				"updater.exe         user    301 MB   C:\\Temp\\x9f2",
+				"free_toolbar_helper.exe  user  CPU 97%   C:\\Users\\Public",
+				"antivirus.exe       user     3 MB   C:\\Users\\front_desk\\AppData\\Roaming"
+			]
+		},
+		"buggy_code": {
+			"keep_order": true,
+			"normal": [
+				"total = 0",
+				"for item in cart:",
+				"    total = total + item.price * item.quantity",
+				"if total > 100: discount = 0.1",
+				"else: discount = 0",
+				"final = total - total * discount",
+				"if customer is None: return error('no customer')",
+				"receipt = make_receipt(customer, final)",
+				"save(receipt)",
+				"return receipt",
+				"log('checkout finished')",
+				"items_left = stock - item.quantity"
+			],
+			"anomalies": [
+				"for i in range(0, len(cart) + 1):",
+				"average = total / 0",
+				"if discount = 0.1: apply(discount)",
+				"return reciept",
+				"while True: pass   # wait for payment",
+				"final = total + total * discount   # apply discount",
+				"password = 'hunter2'   # TODO remove"
+			]
+		},
+		"access_log": {
+			"normal": [
+				"08:58  login ok     alice     office-pc-04",
+				"09:02  login ok     bruno     office-pc-11",
+				"09:15  file open    alice     Q3_report.docx",
+				"10:40  print        bruno     2 pages",
+				"12:01  logout       alice     office-pc-04",
+				"13:05  login ok     alice     office-pc-04",
+				"14:22  file save    carmen    budget.xlsx",
+				"16:30  email sent   bruno     1 attachment, 200 KB",
+				"17:02  logout       bruno     office-pc-11",
+				"17:10  logout       carmen    office-pc-07",
+				"17:45  backup job   system    completed"
+			],
+			"anomalies": [
+				"03:14  login ok     admin     unknown-device",
+				"03:16  export       admin     40,000 customer records",
+				"03:02  login failed root      500 attempts in 60 seconds",
+				"02:47  print        guest     900 pages",
+				"03:20  audit log    admin     logging disabled"
+			]
+		},
+		"packet_capture": {
+			"normal": [
+				"HTTPS 443   workstation-04 -> mail server       12 KB",
+				"HTTPS 443   workstation-11 -> intranet          48 KB",
+				"DNS 53      workstation-04 -> internal resolver   1 KB",
+				"SMB 445     workstation-07 -> file server       220 KB",
+				"HTTPS 443   workstation-07 -> video call        3 MB",
+				"NTP 123     server-01 -> time service             1 KB",
+				"HTTPS 443   server-01 -> update service         90 MB",
+				"IPP 631     workstation-11 -> print server       2 MB",
+				"HTTPS 443   workstation-04 -> intranet          30 KB",
+				"SSH 22      admin-pc -> server-01                 6 KB"
+			],
+			"anomalies": [
+				"TELNET 23   reception-pc -> unknown host          1 KB",
+				"DNS 53      workstation-07 -> unknown host        query 240 characters long",
+				"HTTPS 443   file server -> unknown host           4 GB at 03:00",
+				"SMB 445     reception-pc -> every machine         scanning",
+				"FTP 21      server-01 -> unknown host             passwords in clear text"
+			]
+		}
+	}
+}

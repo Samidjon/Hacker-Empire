@@ -1,0 +1,70 @@
+{
+	"assignments": [
+		{
+			"id": "client_work",
+			"name": "Client Work",
+			"energy_change": -12,
+			"morale_change": -1,
+			"xp_gain": 20,
+			"produces_income": true,
+			"grants_support": false,
+			"description": "Handles maintenance contracts for the company's own clients. Earns money every day."
+		},
+		{
+			"id": "support",
+			"name": "Support You",
+			"energy_change": -8,
+			"morale_change": 0,
+			"xp_gain": 14,
+			"produces_income": false,
+			"grants_support": true,
+			"description": "Works alongside you on your contracts. Earns nothing directly, but gives you the bonus of their role."
+		},
+		{
+			"id": "research",
+			"name": "Research",
+			"energy_change": -9,
+			"morale_change": 1,
+			"xp_gain": 24,
+			"produces_income": false,
+			"grants_support": false,
+			"effects": {
+				"research_power": 4
+			},
+			"description": "Works on the current research project. Adds research power for each point of their role skill."
+		},
+		{
+			"id": "development",
+			"name": "Product Development",
+			"energy_change": -11,
+			"morale_change": 0,
+			"xp_gain": 22,
+			"produces_income": false,
+			"grants_support": false,
+			"effects": {
+				"development_power": 8
+			},
+			"description": "Builds the software product in development. Adds development power for each point of their role skill."
+		},
+		{
+			"id": "training",
+			"name": "Training",
+			"energy_change": -5,
+			"morale_change": 3,
+			"xp_gain": 55,
+			"produces_income": false,
+			"grants_support": false,
+			"description": "Courses and practice. No income, but experience grows much faster."
+		},
+		{
+			"id": "rest",
+			"name": "Time Off",
+			"energy_change": 40,
+			"morale_change": 6,
+			"xp_gain": 0,
+			"produces_income": false,
+			"grants_support": false,
+			"description": "Paid leave. Restores energy and morale."
+		}
+	]
+}

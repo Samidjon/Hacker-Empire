@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ResearchConfig" format=3]
+
+[ext_resource type="Script" path="res://scripts/research/research_config.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+base_research_power = 8.0
+base_development_power = 10.0
+revenue_bonus_per_company_level = 0.05
+company_xp_per_revenue = 0.1

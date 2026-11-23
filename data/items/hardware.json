@@ -1,0 +1,49 @@
+{
+	"items": [
+		{"id": "cpu_pentaline_ii", "category": "cpu", "name": "Pentaline II", "tier": 0, "price": 0, "starter": true, "required_level": 1, "attributes": {}, "description": "Salvaged from an office clear-out. It runs, in the sense that a fridge runs."},
+		{"id": "cpu_quadra", "category": "cpu", "name": "Quadra-4", "tier": 1, "price": 400, "required_level": 1, "attributes": {"speed": 6}, "description": "Four honest cores. Everything you do feels a little less like waiting."},
+		{"id": "cpu_hexon", "category": "cpu", "name": "Hexon 6X", "tier": 2, "price": 1500, "required_level": 4, "attributes": {"speed": 14}, "description": "Six cores with room to breathe. The standard choice for working professionals."},
+		{"id": "cpu_octane", "category": "cpu", "name": "Octane 8 Pro", "tier": 3, "price": 5000, "required_level": 8, "attributes": {"speed": 24}, "description": "Eight fast cores. Analysis jobs that took an evening take a coffee."},
+		{"id": "cpu_titan", "category": "cpu", "name": "Titan 16", "tier": 4, "price": 16000, "required_level": 14, "attributes": {"speed": 38}, "description": "Sixteen cores of workstation silicon. Overkill, until it is not."},
+
+		{"id": "gpu_spark", "category": "gpu", "name": "Spark 2G", "tier": 1, "price": 600, "required_level": 2, "attributes": {"research": 8, "speed": 2}, "description": "An entry-level card. Enough to start crunching numbers on the side."},
+		{"id": "gpu_blaze", "category": "gpu", "name": "Blaze 8G", "tier": 2, "price": 2400, "required_level": 5, "attributes": {"research": 20, "speed": 4}, "description": "A mid-range card with real compute muscle."},
+		{"id": "gpu_inferno", "category": "gpu", "name": "Inferno 16G", "tier": 3, "price": 8000, "required_level": 10, "attributes": {"research": 45, "speed": 7}, "description": "A high-end card. The room gets warmer when it works."},
+		{"id": "gpu_nova", "category": "gpu", "name": "Nova 48G", "tier": 4, "price": 24000, "required_level": 16, "attributes": {"research": 90, "speed": 10}, "description": "A research-grade accelerator. Built for labs, bought by the ambitious."},
+
+		{"id": "ram_4gb", "category": "ram", "name": "4 GB (one stick loose)", "tier": 0, "price": 0, "starter": true, "required_level": 1, "attributes": {}, "description": "Enough memory for one thing at a time, if that thing is small."},
+		{"id": "ram_8gb", "category": "ram", "name": "8 GB Kit", "tier": 1, "price": 250, "required_level": 1, "attributes": {"capacity": 15}, "description": "Two matched sticks. You can finally keep two programs open."},
+		{"id": "ram_16gb", "category": "ram", "name": "16 GB Kit", "tier": 2, "price": 900, "required_level": 3, "attributes": {"capacity": 40}, "description": "Room for several jobs side by side."},
+		{"id": "ram_32gb", "category": "ram", "name": "32 GB Kit", "tier": 3, "price": 3200, "required_level": 7, "attributes": {"capacity": 80}, "description": "Large captures and disk images fit in memory whole."},
+		{"id": "ram_64gb", "category": "ram", "name": "64 GB ECC Kit", "tier": 4, "price": 10000, "required_level": 12, "attributes": {"capacity": 130}, "description": "Error-correcting workstation memory. Nothing gets dropped."},
+
+		{"id": "ssd_120gb", "category": "ssd", "name": "120 GB (makes a noise)", "tier": 0, "price": 0, "starter": true, "required_level": 1, "attributes": {}, "description": "It was fast once. Now it mostly clicks."},
+		{"id": "ssd_500gb", "category": "ssd", "name": "500 GB SATA", "tier": 1, "price": 300, "required_level": 1, "attributes": {"speed": 4}, "description": "A plain, quiet, reliable drive. Clients' disk images load in seconds."},
+		{"id": "ssd_1tb", "category": "ssd", "name": "1 TB SATA", "tier": 2, "price": 1100, "required_level": 3, "attributes": {"speed": 8, "capacity": 10}, "description": "Twice the room and noticeably quicker."},
+		{"id": "ssd_2tb_nvme", "category": "ssd", "name": "2 TB NVMe", "tier": 3, "price": 3800, "required_level": 7, "attributes": {"speed": 14, "capacity": 20}, "description": "Straight on the board. Files open before you finish clicking."},
+		{"id": "ssd_array", "category": "ssd", "name": "8 TB NVMe Array", "tier": 4, "price": 12000, "required_level": 12, "attributes": {"speed": 22, "capacity": 40}, "description": "Four drives working as one. Whole case archives stay online."},
+
+		{"id": "net_blockhaus", "category": "network", "name": "BlockHaus Residential", "tier": 0, "price": 0, "starter": true, "required_level": 1, "attributes": {}, "description": "Shared with the whole building. Slows down when the neighbours watch films."},
+		{"id": "net_fiber_100", "category": "network", "name": "Fiber 100", "tier": 1, "price": 350, "required_level": 1, "attributes": {"network": 15}, "description": "Your own line. The contract board refreshes faster."},
+		{"id": "net_gigabit", "category": "network", "name": "Gigabit Adapter", "tier": 2, "price": 1300, "required_level": 4, "attributes": {"network": 30}, "description": "A proper gigabit link with a card that can keep up."},
+		{"id": "net_multilink", "category": "network", "name": "Multi-Link Bonded", "tier": 3, "price": 4500, "required_level": 8, "attributes": {"network": 45}, "description": "Two bonded lines. One can fail and nobody notices."},
+		{"id": "net_backbone", "category": "network", "name": "Backbone Tap 10G", "tier": 4, "price": 14000, "required_level": 13, "attributes": {"network": 60}, "description": "A ten-gigabit business line. New work reaches you first."},
+
+		{"id": "cool_stock", "category": "cooling", "name": "Stock Fan (dusty)", "tier": 0, "price": 0, "starter": true, "required_level": 1, "attributes": {}, "description": "It spins. That is the kindest thing to say about it."},
+		{"id": "cool_tower", "category": "cooling", "name": "Tower Cooler", "tier": 1, "price": 200, "required_level": 1, "attributes": {"speed": 3}, "description": "A big quiet heatsink. The CPU stops slowing itself down."},
+		{"id": "cool_liquid", "category": "cooling", "name": "Liquid Loop 240", "tier": 2, "price": 1000, "required_level": 4, "attributes": {"speed": 7}, "description": "A sealed liquid loop. Full speed, all day."},
+		{"id": "cool_custom", "category": "cooling", "name": "Custom Loop", "tier": 3, "price": 3500, "required_level": 8, "attributes": {"speed": 12}, "description": "Hand-built tubing and a radiator the size of a book."},
+		{"id": "cool_phase", "category": "cooling", "name": "Phase-Change Unit", "tier": 4, "price": 11000, "required_level": 13, "attributes": {"speed": 18}, "description": "A small refrigerator for your processor. The neighbours ask about the hum."},
+
+		{"id": "mon_crt", "category": "monitor", "name": "15\" CRT", "tier": 0, "price": 0, "starter": true, "required_level": 1, "attributes": {}, "description": "Heavy, curved and faintly green."},
+		{"id": "mon_dual", "category": "monitor", "name": "Dual 24\"", "tier": 1, "price": 450, "required_level": 2, "attributes": {"capacity": 15}, "description": "Two flat screens. Logs on the left, notes on the right."},
+		{"id": "mon_ultrawide", "category": "monitor", "name": "Ultrawide 34\"", "tier": 2, "price": 1600, "required_level": 5, "attributes": {"capacity": 30}, "description": "One long curved screen. Three windows fit side by side."},
+		{"id": "mon_wall", "category": "monitor", "name": "Four-Screen Wall", "tier": 3, "price": 5500, "required_level": 9, "attributes": {"capacity": 50}, "description": "A two-by-two wall of screens. You can watch everything at once."},
+		{"id": "mon_holo", "category": "monitor", "name": "Holo-Projection Desk", "tier": 4, "price": 15000, "required_level": 14, "attributes": {"capacity": 80}, "description": "A projection surface that fills the air above your desk."},
+
+		{"id": "srv_closet", "category": "server", "name": "Closet Server", "tier": 1, "price": 2000, "required_level": 5, "attributes": {"research": 15, "capacity": 20}, "description": "A second-hand tower in the wardrobe, working while you sleep."},
+		{"id": "srv_rack", "category": "server", "name": "Half Rack", "tier": 2, "price": 7000, "required_level": 9, "attributes": {"research": 40, "capacity": 45}, "description": "A real rack with real noise. Jobs queue up and run overnight."},
+		{"id": "srv_cluster", "category": "server", "name": "Compute Cluster", "tier": 3, "price": 20000, "required_level": 14, "attributes": {"research": 90, "capacity": 80}, "description": "Eight nodes behind one switch. A small lab of your own."},
+		{"id": "srv_datacenter", "category": "server", "name": "Private Data Hall", "tier": 4, "price": 60000, "required_level": 20, "attributes": {"research": 200, "capacity": 130}, "description": "A rented cage in a data centre with your name on the door."}
+	]
+}

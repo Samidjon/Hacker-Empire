@@ -1,0 +1,81 @@
+{
+	"roles": [
+		{
+			"id": "programmer",
+			"name": "Programmer",
+			"primary_skill": "programming",
+			"base_salary": 22,
+			"salary_per_skill": 8,
+			"income_per_skill": 32,
+			"support_effects": {
+				"contract_time": 2
+			},
+			"description": "Builds and fixes client software. As support, automates the dull parts of your contracts so you get more time."
+		},
+		{
+			"id": "security_analyst",
+			"name": "Security Analyst",
+			"primary_skill": "security",
+			"base_salary": 24,
+			"salary_per_skill": 9,
+			"income_per_skill": 34,
+			"support_effects": {
+				"contract_reward:security_audit": 2,
+				"contract_reward:incident_investigation": 2
+			},
+			"description": "Runs audits for clients. As support, raises what you are paid for audits and incident work."
+		},
+		{
+			"id": "network_engineer",
+			"name": "Network Engineer",
+			"primary_skill": "networking",
+			"base_salary": 22,
+			"salary_per_skill": 8,
+			"income_per_skill": 32,
+			"support_effects": {
+				"refresh_cooldown": 3,
+				"contract_reward:network_analysis": 2
+			},
+			"description": "Keeps client networks alive. As support, finds you new offers faster and raises network analysis pay."
+		},
+		{
+			"id": "reverse_engineer",
+			"name": "Reverse Engineer",
+			"primary_skill": "reverse_engineering",
+			"base_salary": 24,
+			"salary_per_skill": 9,
+			"income_per_skill": 35,
+			"support_effects": {
+				"contract_reward:malware_investigation": 2,
+				"contract_reward:file_recovery": 2
+			},
+			"description": "Takes things apart for a living. As support, raises pay for malware and recovery work."
+		},
+		{
+			"id": "ai_engineer",
+			"name": "AI Engineer",
+			"primary_skill": "ai",
+			"base_salary": 26,
+			"salary_per_skill": 10,
+			"income_per_skill": 37,
+			"support_effects": {
+				"contract_xp": 2,
+				"research_power": 3
+			},
+			"description": "Trains models for clients. As support, helps you learn faster from every contract and adds research power."
+		},
+		{
+			"id": "system_administrator",
+			"name": "System Administrator",
+			"primary_skill": "operations",
+			"base_salary": 20,
+			"salary_per_skill": 8,
+			"income_per_skill": 30,
+			"support_effects": {
+				"heat_reduction": 3,
+				"contract_time": 1
+			},
+			"description": "Keeps everything running and everything logged. As support, keeps your tracks tidy so underground work raises less heat."
+		}
+	]
+}

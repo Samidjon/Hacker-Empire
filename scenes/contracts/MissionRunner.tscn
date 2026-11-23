@@ -1,0 +1,114 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/contracts/mission_runner.gd" id="1"]
+
+[node name="MissionRunner" type="VBoxContainer"]
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1")
+
+[node name="MissionPanel" type="VBoxContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 10
+
+[node name="Header" type="PanelContainer" parent="MissionPanel"]
+layout_mode = 2
+
+[node name="VBox" type="VBoxContainer" parent="MissionPanel/Header"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="TopRow" type="HBoxContainer" parent="MissionPanel/Header/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="MissionTitle" type="Label" parent="MissionPanel/Header/VBox/TopRow"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"HeaderLabel"
+text = "Contract"
+clip_text = true
+
+[node name="MistakesLabel" type="Label" parent="MissionPanel/Header/VBox/TopRow"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Mistakes left: 3"
+
+[node name="TimeLabel" type="Label" parent="MissionPanel/Header/VBox/TopRow"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Time left: 00:00"
+
+[node name="AbandonButton" type="Button" parent="MissionPanel/Header/VBox/TopRow"]
+unique_name_in_owner = true
+layout_mode = 2
+tooltip_text = "Give up. Counts as a failed contract."
+theme_type_variation = &"DangerButton"
+theme_override_font_sizes/font_size = 15
+text = "Abandon"
+
+[node name="StageLabel" type="Label" parent="MissionPanel/Header/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"DimLabel"
+text = "STAGE 1 OF 1"
+
+[node name="InstructionLabel" type="Label" parent="MissionPanel/Header/VBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+text = "Instruction"
+autowrap_mode = 3
+
+[node name="Scroll" type="ScrollContainer" parent="MissionPanel"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="PuzzleHolder" type="VBoxContainer" parent="MissionPanel/Scroll"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="FeedbackLabel" type="Label" parent="MissionPanel"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 26)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.69, 0.125, 1)
+
+[node name="ResultPanel" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Center" type="CenterContainer" parent="ResultPanel"]
+layout_mode = 2
+
+[node name="VBox" type="VBoxContainer" parent="ResultPanel/Center"]
+layout_mode = 2
+theme_override_constants/separation = 18
+
+[node name="ResultTitle" type="Label" parent="ResultPanel/Center/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"HeaderLabel"
+text = "CONTRACT COMPLETED"
+horizontal_alignment = 1
+
+[node name="ResultText" type="Label" parent="ResultPanel/Center/VBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(420, 0)
+layout_mode = 2
+text = "Summary"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="ResultCloseButton" type="Button" parent="ResultPanel/Center/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Back to the Board"

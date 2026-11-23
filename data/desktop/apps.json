@@ -1,0 +1,148 @@
+{
+	"apps": [
+		{
+			"id": "dashboard",
+			"title": "Dashboard",
+			"glyph": "[#]",
+			"scene": "res://scenes/applications/Dashboard.tscn",
+			"size": [
+				1120,
+				740
+			]
+		},
+		{
+			"id": "terminal",
+			"title": "Terminal",
+			"glyph": ">_",
+			"scene": "res://scenes/applications/Terminal.tscn",
+			"size": [
+				900,
+				560
+			],
+			"keep_state": true
+		},
+		{
+			"id": "files",
+			"title": "File Manager",
+			"glyph": "[/]",
+			"scene": "res://scenes/applications/FileManager.tscn",
+			"size": [
+				960,
+				580
+			],
+			"keep_state": true
+		},
+		{
+			"id": "mail",
+			"title": "Mail",
+			"glyph": "[@]",
+			"scene": "res://scenes/applications/Mail.tscn",
+			"size": [
+				980,
+				600
+			]
+		},
+		{
+			"id": "finance",
+			"title": "Finance",
+			"glyph": "[$]",
+			"scene": "res://scenes/applications/FinanceApp.tscn",
+			"size": [
+				1040,
+				700
+			]
+		},
+		{
+			"id": "network",
+			"title": "Network Map",
+			"glyph": "<*>",
+			"scene": "res://scenes/applications/NetworkMap.tscn",
+			"size": [
+				1080,
+				660
+			]
+		},
+		{
+			"id": "contracts",
+			"title": "Contracts",
+			"glyph": "[!]",
+			"scene": "res://scenes/applications/ContractsApp.tscn",
+			"size": [
+				1180,
+				760
+			],
+			"keep_state": true
+		},
+		{
+			"id": "marketplace",
+			"title": "Marketplace",
+			"glyph": "[%]",
+			"scene": "res://scenes/applications/Marketplace.tscn",
+			"size": [
+				1120,
+				700
+			]
+		},
+		{
+			"id": "hardware",
+			"title": "Hardware",
+			"glyph": "[=]",
+			"scene": "res://scenes/applications/HardwareApp.tscn",
+			"size": [
+				1080,
+				700
+			]
+		},
+		{
+			"id": "skills",
+			"title": "Skills",
+			"glyph": "[^]",
+			"scene": "res://scenes/applications/SkillsApp.tscn",
+			"size": [
+				1400,
+				740
+			]
+		},
+		{
+			"id": "organization",
+			"title": "Organization",
+			"glyph": "[H]",
+			"scene": "res://scenes/applications/OrganizationApp.tscn",
+			"size": [
+				1100,
+				720
+			]
+		},
+		{
+			"id": "employees",
+			"title": "Employees",
+			"glyph": "[&]",
+			"scene": "res://scenes/applications/EmployeesApp.tscn",
+			"size": [
+				1180,
+				720
+			]
+		},
+		{
+			"id": "research",
+			"title": "Research",
+			"glyph": "[~]",
+			"scene": "res://scenes/applications/ResearchApp.tscn",
+			"size": [
+				1180,
+				720
+			]
+		},
+		{
+			"id": "devtools",
+			"title": "Dev Tools",
+			"glyph": "{d}",
+			"scene": "res://scenes/ui/DebugPanel.tscn",
+			"size": [
+				360,
+				520
+			],
+			"debug_only": true
+		}
+	]
+}

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ContractConfig" format=3]
+
+[ext_resource type="Script" path="res://scripts/contracts/contract_config.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+board_size = 4
+max_mistakes = 3
+time_limit_factor = 3.0
+flawless_bonus_ratio = 0.1
+reward_variance = 0.15
+failure_reputation_penalty = 2
+failure_heat = 4.0
+refresh_cooldown_seconds = 45.0
+max_history = 50

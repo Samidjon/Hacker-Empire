@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="HardwareConfig" format=3]
+
+[ext_resource type="Script" path="res://scripts/hardware/hardware_config.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+time_percent_per_speed = 1.0
+capacity_per_offer = 60.0
+max_extra_offers = 4
+cooldown_percent_per_network = 1.0
+research_power_per_point = 1.0
+power_cost_per_tier = 4
+max_electricity_reduction = 90.0

@@ -1,0 +1,77 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/applications/hardware_app.gd" id="1"]
+[ext_resource type="SystemFont" path="res://resources/themes/mono_font.tres" id="2"]
+
+[node name="HardwareApp" type="VBoxContainer"]
+theme_override_constants/separation = 14
+script = ExtResource("1")
+
+[node name="TotalsPanel" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(0, 215)
+layout_mode = 2
+
+[node name="VBox" type="VBoxContainer" parent="TotalsPanel"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="TotalsPanel/VBox"]
+layout_mode = 2
+theme_type_variation = &"DimLabel"
+text = "SYSTEM PERFORMANCE"
+
+[node name="HardwareTotals" type="RichTextLabel" parent="TotalsPanel/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 0
+
+[node name="Body" type="HBoxContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 14
+
+[node name="Slots" type="VBoxContainer" parent="Body"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Title" type="Label" parent="Body/Slots"]
+layout_mode = 2
+theme_type_variation = &"DimLabel"
+text = "INSTALLED"
+
+[node name="SlotList" type="ItemList" parent="Body/Slots"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2")
+theme_override_font_sizes/font_size = 16
+
+[node name="Owned" type="VBoxContainer" parent="Body"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="OwnedTitle" type="Label" parent="Body/Owned"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"DimLabel"
+text = "OWNED PARTS"
+
+[node name="OwnedList" type="ItemList" parent="Body/Owned"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="OwnedDetails" type="Label" parent="Body/Owned"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 90)
+layout_mode = 2
+theme_type_variation = &"DimLabel"
+text = "Select a part to see it."
+autowrap_mode = 3
+
+[node name="InstallButton" type="Button" parent="Body/Owned"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+text = "Install"

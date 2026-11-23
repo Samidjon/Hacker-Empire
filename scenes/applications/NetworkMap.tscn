@@ -1,0 +1,52 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/applications/network/network_map.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/applications/network/network_map_view.gd" id="2"]
+
+[node name="NetworkMap" type="HBoxContainer"]
+theme_override_constants/separation = 14
+script = ExtResource("1")
+
+[node name="MapPanel" type="PanelContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MapView" type="Control" parent="MapPanel"]
+unique_name_in_owner = true
+clip_contents = true
+layout_mode = 2
+script = ExtResource("2")
+
+[node name="Details" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+
+[node name="VBox" type="VBoxContainer" parent="Details"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="MapSummaryLabel" type="Label" parent="Details/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"DimLabel"
+text = "0 of 0 nodes discovered"
+
+[node name="NodeNameLabel" type="Label" parent="Details/VBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(260, 0)
+layout_mode = 2
+theme_type_variation = &"HeaderLabel"
+text = "No node selected"
+autowrap_mode = 3
+
+[node name="NodeStatusLabel" type="Label" parent="Details/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"DimLabel"
+
+[node name="NodeDescriptionLabel" type="Label" parent="Details/VBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(260, 0)
+layout_mode = 2
+text = "Click a node on the map."
+autowrap_mode = 3

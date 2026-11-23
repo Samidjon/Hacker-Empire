@@ -1,0 +1,159 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/applications/employees_app.gd" id="1"]
+
+[node name="EmployeesApp" type="VBoxContainer"]
+theme_override_constants/separation = 12
+script = ExtResource("1")
+
+[node name="Tabs" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="StaffTabButton" type="Button" parent="Tabs"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"SmallButton"
+toggle_mode = true
+text = "Staff"
+
+[node name="RecruitTabButton" type="Button" parent="Tabs"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"SmallButton"
+toggle_mode = true
+text = "Recruit"
+
+[node name="StaffSummaryLabel" type="Label" parent="Tabs"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"DimLabel"
+horizontal_alignment = 2
+
+[node name="NoCompanyLabel" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"DimLabel"
+text = "You need a company before you can hire. Open the Organization app to found one."
+
+[node name="StaffView" type="HBoxContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 14
+
+[node name="StaffList" type="ItemList" parent="StaffView"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(360, 0)
+layout_mode = 2
+
+[node name="Details" type="PanelContainer" parent="StaffView"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBox" type="VBoxContainer" parent="StaffView/Details"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="EmployeeNameLabel" type="Label" parent="StaffView/Details/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"HeaderLabel"
+text = "No staff yet"
+
+[node name="EmployeeMetaLabel" type="Label" parent="StaffView/Details/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"DimLabel"
+
+[node name="Columns" type="HBoxContainer" parent="StaffView/Details/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 14
+
+[node name="EmployeeFacts" type="RichTextLabel" parent="StaffView/Details/VBox/Columns"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+
+[node name="Task" type="VBoxContainer" parent="StaffView/Details/VBox/Columns"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="TaskTitle" type="Label" parent="StaffView/Details/VBox/Columns/Task"]
+layout_mode = 2
+theme_type_variation = &"DimLabel"
+text = "ASSIGNMENT (CLICK TO CHANGE)"
+
+[node name="AssignmentList" type="ItemList" parent="StaffView/Details/VBox/Columns/Task"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 170)
+layout_mode = 2
+
+[node name="AssignmentDescription" type="Label" parent="StaffView/Details/VBox/Columns/Task"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(280, 0)
+layout_mode = 2
+size_flags_vertical = 3
+theme_type_variation = &"DimLabel"
+autowrap_mode = 3
+
+[node name="DismissButton" type="Button" parent="StaffView/Details/VBox/Columns/Task"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"DangerButton"
+theme_override_font_sizes/font_size = 15
+text = "Dismiss"
+
+[node name="RecruitView" type="HBoxContainer" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 14
+
+[node name="CandidateList" type="ItemList" parent="RecruitView"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(420, 0)
+layout_mode = 2
+
+[node name="Details" type="PanelContainer" parent="RecruitView"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBox" type="VBoxContainer" parent="RecruitView/Details"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="CandidateNameLabel" type="Label" parent="RecruitView/Details/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"HeaderLabel"
+text = "No candidates"
+
+[node name="CandidateMetaLabel" type="Label" parent="RecruitView/Details/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"DimLabel"
+
+[node name="CandidateFacts" type="RichTextLabel" parent="RecruitView/Details/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 0
+
+[node name="HireBlockerLabel" type="Label" parent="RecruitView/Details/VBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.271, 0.376, 1)
+autowrap_mode = 3
+
+[node name="HireButton" type="Button" parent="RecruitView/Details/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+text = "Hire"

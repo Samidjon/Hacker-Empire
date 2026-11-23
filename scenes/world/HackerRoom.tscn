@@ -1,0 +1,110 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/world/hacker_room.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/world/room_shell.gd" id="2"]
+[ext_resource type="Script" path="res://scripts/world/iso_depth_sorter.gd" id="3"]
+[ext_resource type="Script" path="res://scripts/world/iso_block.gd" id="4"]
+[ext_resource type="PackedScene" path="res://scenes/world/Computer.tscn" id="5"]
+[ext_resource type="PackedScene" path="res://scenes/interaction/Interactable.tscn" id="6"]
+
+[node name="HackerRoom" type="Node2D"]
+script = ExtResource("1")
+spawn_grid_position = Vector2(4, 4)
+
+[node name="Shell" type="Node2D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("2")
+
+[node name="Props" type="Node2D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("3")
+
+[node name="Computer" parent="Props" instance=ExtResource("5")]
+grid_position = Vector2(3, 0.5)
+
+[node name="Door" type="Node2D" parent="Props"]
+script = ExtResource("4")
+grid_position = Vector2(0.9, 0.06)
+footprint_size = Vector2(0.9, 0.08)
+height = 2.0
+base_color = Color(0.05, 0.07, 0.12, 1)
+edge_color = Color(0, 1, 0.612, 0.9)
+solid = false
+screen_face = 1
+screen_color = Color(0, 1, 0.612, 0.18)
+
+[node name="Chair" type="Node2D" parent="Props"]
+script = ExtResource("4")
+grid_position = Vector2(4.25, 1.55)
+footprint_size = Vector2(0.55, 0.55)
+height = 0.5
+base_color = Color(0.13, 0.1, 0.22, 1)
+edge_color = Color(0.659, 0.333, 0.969, 0.9)
+
+[node name="Storage" type="Node2D" parent="Props"]
+script = ExtResource("4")
+grid_position = Vector2(0.5, 2.1)
+footprint_size = Vector2(1, 1.6)
+height = 1.3
+base_color = Color(0.08, 0.11, 0.19, 1)
+edge_color = Color(1, 0.69, 0.125, 0.8)
+
+[node name="Bed" type="Node2D" parent="Props"]
+script = ExtResource("4")
+grid_position = Vector2(1.1, 6.4)
+footprint_size = Vector2(2.2, 1.3)
+height = 0.35
+base_color = Color(0.12, 0.09, 0.2, 1)
+edge_color = Color(0.659, 0.333, 0.969, 0.9)
+
+[node name="Pillow" type="Node2D" parent="Props/Bed"]
+script = ExtResource("4")
+grid_position = Vector2(-0.75, 0)
+footprint_size = Vector2(0.5, 1)
+height = 0.12
+elevation = 0.35
+base_color = Color(0.2, 0.24, 0.36, 1)
+edge_color = Color(0, 0.898, 1, 0.5)
+edge_width = 1.0
+solid = false
+
+[node name="Lamp" type="Node2D" parent="Props"]
+script = ExtResource("4")
+grid_position = Vector2(7.5, 0.5)
+footprint_size = Vector2(0.3, 0.3)
+height = 1.9
+base_color = Color(0.05, 0.07, 0.12, 1)
+edge_color = Color(0, 1, 0.612, 0.9)
+screen_face = 1
+screen_color = Color(0, 1, 0.612, 0.7)
+
+[node name="Interactables" type="Node2D" parent="."]
+
+[node name="BedInteractable" parent="Interactables" instance=ExtResource("6")]
+kind = 1
+prompt_text = "Rest (Save Game)"
+grid_position = Vector2(2.65, 6.4)
+marker_elevation = 1.0
+marker_color = Color(0.659, 0.333, 0.969, 1)
+
+[node name="StorageInteractable" parent="Interactables" instance=ExtResource("6")]
+kind = 3
+prompt_text = "Open Storage"
+grid_position = Vector2(1.45, 2.1)
+marker_elevation = 1.9
+marker_color = Color(1, 0.69, 0.125, 1)
+
+[node name="DoorInteractable" parent="Interactables" instance=ExtResource("6")]
+kind = 4
+prompt_text = "Go to the Office"
+travel_target = "office"
+grid_position = Vector2(0.9, 0.7)
+marker_elevation = 2.3
+marker_color = Color(0, 1, 0.612, 1)
+
+[node name="WindowInteractable" parent="Interactables" instance=ExtResource("6")]
+prompt_text = "Look Outside"
+message = "Rain on the glass. Somewhere below the neon, the corporations never sleep."
+grid_position = Vector2(6, 0.55)
+marker_elevation = 2.4
+marker_color = Color(0, 0.898, 1, 1)
